@@ -34,7 +34,7 @@ Blockly.Blocks['motion_movesteps'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "move %1 steps",
+      "message0": "移动 %1 步",
       "args0": [
         {
           "type": "input_value",
@@ -59,7 +59,7 @@ Blockly.Blocks['motion_turnright'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "turn %1 %2 degrees",
+      "message0": "向右旋转 %1 %2 度",
       "args0": [
         {
           "type": "field_image",
@@ -90,7 +90,7 @@ Blockly.Blocks['motion_turnleft'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "turn %1 %2 degrees",
+      "message0": "向左旋转 %1 %2 度",
       "args0": [
         {
           "type": "field_image",
@@ -121,7 +121,7 @@ Blockly.Blocks['motion_pointindirection'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "point in direction %1",
+      "message0": "面向 %1 方向",
       "args0": [
         {
           "type": "input_value",
@@ -153,7 +153,7 @@ Blockly.Blocks['motion_pointtowards_menu'] = {
             "type": "field_dropdown",
             "name": "TOWARDS",
             "options": [
-              ['mouse-pointer', '_mouse_']
+              ['鼠标指针', '_mouse_']
             ]
           }
         ],
@@ -174,7 +174,7 @@ Blockly.Blocks['motion_pointtowards'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "point towards %1",
+      "message0": "面向 %1",
       "args0": [
         {
           "type": "input_value",
@@ -206,8 +206,8 @@ Blockly.Blocks['motion_goto_menu'] = {
             "type": "field_dropdown",
             "name": "TO",
             "options": [
-              ['mouse-pointer', '_mouse_'],
-              ['random position', '_random_']
+              ['鼠标指针', '_mouse_'],
+              ['随机位置', '_random_']
             ]
           }
         ],
@@ -228,7 +228,7 @@ Blockly.Blocks['motion_gotoxy'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "go to x: %1 y: %2",
+      "message0": "移到 x: %1 y: %2",
       "args0": [
         {
           "type": "input_value",
@@ -257,7 +257,7 @@ Blockly.Blocks['motion_goto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "go to %1",
+      "message0": "移到 %1",
       "args0": [
         {
           "type": "input_value",
@@ -282,7 +282,7 @@ Blockly.Blocks['motion_glidesecstoxy'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "glide %1 secs to x: %2 y: %3",
+      "message0": "在 %1 秒内滑行到 x: %2 y: %3",
       "args0": [
         {
           "type": "input_value",
@@ -315,7 +315,7 @@ Blockly.Blocks['motion_changexby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "change x by %1",
+      "message0": "将x坐标增加 %1",
       "args0": [
         {
           "type": "input_value",
@@ -340,7 +340,7 @@ Blockly.Blocks['motion_setx'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set x to %1",
+      "message0": "将x坐标设定为 %1",
       "args0": [
         {
           "type": "input_value",
@@ -365,7 +365,7 @@ Blockly.Blocks['motion_changeyby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "change y by %1",
+      "message0": "将y坐标增加 %1",
       "args0": [
         {
           "type": "input_value",
@@ -390,7 +390,7 @@ Blockly.Blocks['motion_sety'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set y to %1",
+      "message0": "将y坐标设定为 %1",
       "args0": [
         {
           "type": "input_value",
@@ -415,7 +415,7 @@ Blockly.Blocks['motion_ifonedgebounce'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "if on edge, bounce",
+      "message0": "碰到边缘就反弹",
       "previousStatement": null,
       "nextStatement": null,
       "category": Blockly.Categories.motion,
@@ -426,6 +426,36 @@ Blockly.Blocks['motion_ifonedgebounce'] = {
   }
 };
 
+Blockly.Blocks['motion_setrotationstyle_menu'] = {
+  /**
+   * Rotation style drop-down menu.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit(
+      {
+        "message0": "%1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "STYLE",
+            "options": [
+              ['左-右翻转', 'left-right'],
+              ['不翻转', 'don\'t rotate'],
+              ['任意', 'all around']
+            ]
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": Blockly.Colours.motion.secondary,
+        "colourSecondary": Blockly.Colours.motion.secondary,
+        "colourTertiary": Blockly.Colours.motion.tertiary,
+        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
+      });
+  }
+};
+
 Blockly.Blocks['motion_setrotationstyle'] = {
   /**
    * Block to set rotation style.
@@ -433,16 +463,11 @@ Blockly.Blocks['motion_setrotationstyle'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set rotation style %1",
+      "message0": "将旋转模式设定为 %1",
       "args0": [
         {
-          "type": "field_dropdown",
-          "name": "STYLE",
-          "options": [
-            ['left-right', 'left-right'],
-            ['don\'t rotate', 'don\'t rotate'],
-            ['all around', 'all around']
-          ]
+          "type": "input_value",
+          "name": "STYLE"
         }
       ],
       "previousStatement": null,
@@ -462,7 +487,7 @@ Blockly.Blocks['motion_xposition'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "x position",
+      "message0": "x坐标",
       "output": "Number",
       "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
       "category": Blockly.Categories.motion,
@@ -481,7 +506,7 @@ Blockly.Blocks['motion_yposition'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "y position",
+      "message0": "y坐标",
       "output": "Number",
       "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
       "category": Blockly.Categories.motion,
@@ -500,7 +525,7 @@ Blockly.Blocks['motion_direction'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "direction",
+      "message0": "方向",
       "output": "Number",
       "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
       "category": Blockly.Categories.motion,

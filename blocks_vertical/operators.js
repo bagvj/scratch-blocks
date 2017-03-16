@@ -155,7 +155,7 @@ Blockly.Blocks['operator_random'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "pick random %1 to %2",
+        "message0": "在 %1 到 %2 间随机选一个数",
         "args0": [
           {
             "type": "input_value",
@@ -271,7 +271,7 @@ Blockly.Blocks['operator_and'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "%1 and %2",
+      "message0": "%1 与 %2",
       "args0": [
         {
           "type": "input_value",
@@ -302,7 +302,7 @@ Blockly.Blocks['operator_or'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "%1 or %2",
+      "message0": "%1 或 %2",
       "args0": [
         {
           "type": "input_value",
@@ -333,7 +333,7 @@ Blockly.Blocks['operator_not'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "not %1",
+      "message0": " %1 不成立",
       "args0": [
         {
           "type": "input_value",
@@ -359,7 +359,7 @@ Blockly.Blocks['operator_join'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "join %1 %2",
+      "message0": "连接 %1 %2",
       "args0": [
         {
           "type": "input_value",
@@ -388,7 +388,7 @@ Blockly.Blocks['operator_letter_of'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "letter %1 of %2",
+      "message0": "第 %1 个字符 %2",
       "args0": [
         {
           "type": "input_value",
@@ -417,7 +417,7 @@ Blockly.Blocks['operator_length'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "length of %1",
+      "message0": " %1 的长度",
       "args0": [
         {
           "type": "input_value",
@@ -443,7 +443,7 @@ Blockly.Blocks['operator_mod'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "%1 mod %2",
+        "message0": "%1 除以 %2 的余数",
         "args0": [
           {
             "type": "input_value",
@@ -473,7 +473,7 @@ Blockly.Blocks['operator_round'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "round %1",
+        "message0": "将 %1 四舍五入",
         "args0": [
           {
             "type": "input_value",
@@ -491,6 +491,47 @@ Blockly.Blocks['operator_round'] = {
   }
 };
 
+Blockly.Blocks['operator_mathop_menu'] = {
+  /**
+   * Math ops drop-down menu.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit(
+      {
+        "message0": "%1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "OPERATOR",
+            "options": [
+              ['绝对值', 'abs'],
+              ['向下取整', 'floor'],
+              ['向上取整', 'ceiling'],
+              ['平方根', 'sqrt'],
+              ['正弦', 'sin'],
+              ['余弦', 'cos'],
+              ['正切', 'tan'],
+              ['反正弦', 'asin'],
+              ['反余弦', 'acos'],
+              ['反正切', 'atan'],
+              ['ln', 'ln'],
+              ['log', 'log'],
+              ['e ^', 'e ^'],
+              ['10 ^', '10 ^']
+            ]
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": Blockly.Colours.operators.secondary,
+        "colourSecondary": Blockly.Colours.operators.secondary,
+        "colourTertiary": Blockly.Colours.operators.tertiary,
+        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
+      });
+  }
+};
+
 Blockly.Blocks['operator_mathop'] = {
   /**
    * Block for "advanced" math ops on a number.
@@ -499,27 +540,11 @@ Blockly.Blocks['operator_mathop'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "%1 of %2",
+        "message0": "%1  %2",
         "args0": [
           {
-            "type": "field_dropdown",
-            "name": "OPERATOR",
-            "options": [
-              ['abs', 'abs'],
-              ['floor', 'floor'],
-              ['ceiling', 'ceiling'],
-              ['sqrt', 'sqrt'],
-              ['sin', 'sin'],
-              ['cos', 'cos'],
-              ['tan', 'tan'],
-              ['asin', 'asin'],
-              ['acos', 'acos'],
-              ['atan', 'atan'],
-              ['ln', 'ln'],
-              ['log', 'log'],
-              ['e ^', 'e ^'],
-              ['10 ^', '10 ^']
-            ]
+            "type": "input_value",
+            "name": "OPERATOR"
           },
           {
             "type": "input_value",

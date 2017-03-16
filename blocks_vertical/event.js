@@ -35,7 +35,7 @@ Blockly.Blocks['event_whenflagclicked'] = {
   init: function() {
     this.jsonInit({
       "id": "event_whenflagclicked",
-      "message0": "when %1 clicked",
+      "message0": "当 %1 被点击",
       "args0": [
         {
           "type": "field_image",
@@ -63,7 +63,7 @@ Blockly.Blocks['event_whenthisspriteclicked'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "when this sprite clicked",
+      "message0": "当角色被点击时",
       "inputsInline": true,
       "nextStatement": null,
       "category": Blockly.Categories.event,
@@ -82,15 +82,15 @@ Blockly.Blocks['event_whenbroadcastreceived'] = {
   init: function() {
     this.jsonInit({
       "id": "event_whenbroadcastreceived",
-      "message0": "when I receive %1",
+      "message0": "当接收到 %1",
       "args0": [
         {
           "type": "field_dropdown",
           "name": "BROADCAST_OPTION",
           "options": [
-            ['message1', 'message1'],
-            ['message2', 'message2'],
-            ['new message', 'new message']
+            ['消息1', 'message1'],
+            ['消息2', 'message2'],
+            ['新消息', 'new message']
           ]
         }
       ],
@@ -111,7 +111,7 @@ Blockly.Blocks['event_whenbackdropswitchesto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "when backdrop switches to %1",
+      "message0": "当背景切换到 %1",
       "args0": [
         {
           "type": "field_dropdown",
@@ -138,13 +138,15 @@ Blockly.Blocks['event_whengreaterthan'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "when %1 > %2",
+      "message0": "当 %1 > %2",
       "args0": [
         {
           "type": "field_dropdown",
           "name": "WHENGREATERTHANMENU",
           "options": [
-              ['timer', 'TIMER']
+              ['响度', 'LOUDNESS'],
+              ['计时器', 'TIMER'],
+              ['视频移动', 'VIDEOMOTION']
           ]
         },
         {
@@ -176,9 +178,9 @@ Blockly.Blocks['event_broadcast_menu'] = {
             "type": "field_dropdown",
             "name": "BROADCAST_OPTION",
             "options": [
-              ['message1', 'message1'],
-              ['message2', 'message2'],
-              ['new message', 'new message']
+              ['消息1', 'message1'],
+              ['消息2', 'message2'],
+              ['新消息', 'new message']
             ]
           }
         ],
@@ -200,7 +202,7 @@ Blockly.Blocks['event_broadcast'] = {
   init: function() {
     this.jsonInit({
       "id": "event_broadcast",
-      "message0": "broadcast %1",
+      "message0": "广播 %1",
       "args0": [
         {
           "type": "input_value",
@@ -225,7 +227,7 @@ Blockly.Blocks['event_broadcastandwait'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "broadcast %1 and wait",
+      "message0": "广播 %1 并等待",
       "args0": [
         {
           "type": "input_value",
@@ -251,18 +253,18 @@ Blockly.Blocks['event_whenkeypressed'] = {
   init: function() {
     this.jsonInit({
       "id": "event_whenkeypressed",
-      "message0": "when %1 key pressed",
+      "message0": "当 %1 键被按下时",
       "args0": [
         {
           "type": "field_dropdown",
           "name": "KEY_OPTION",
           "options": [
-            ['space', 'space'],
-            ['left arrow', 'left arrow'],
-            ['right arrow', 'right arrow'],
-            ['down arrow', 'down arrow'],
-            ['up arrow', 'up arrow'],
-            ['any', 'any'],
+            ['空格', 'space'],
+            ['左箭头', 'left arrow'],
+            ['右箭头', 'right arrow'],
+            ['下箭头', 'down arrow'],
+            ['上箭头', 'up arrow'],
+            ['任意', 'any'],
             ['a', 'a'],
             ['b', 'b'],
             ['c', 'c'],

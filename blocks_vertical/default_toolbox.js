@@ -29,7 +29,7 @@ goog.require('Blockly.Blocks');
  */
 
 Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: none">'+
-  '<category name="Motion" colour="#4C97FF" secondaryColour="#3373CC">'+
+  '<category name="动作" colour="#4C97FF" secondaryColour="#3373CC">'+
     '<block type="motion_movesteps">'+
       '<value name="STEPS">'+
         '<shadow type="math_number">'+
@@ -128,12 +128,54 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
     '<block type="motion_ifonedgebounce"></block>'+
-    '<block type="motion_setrotationstyle"></block>'+
+    '<block type="motion_setrotationstyle">'+
+      '<value name="STYLE">'+
+        '<shadow type="motion_setrotationstyle_menu"></shadow>'+
+      '</value>'+
+    '</block>'+
     '<block type="motion_xposition"></block>'+
     '<block type="motion_yposition"></block>'+
     '<block type="motion_direction"></block>'+
   '</category>'+
-  '<category name="Looks" colour="#9966FF" secondaryColour="#774DCB">'+
+  '<category name="外观" colour="#9966FF" secondaryColour="#774DCB">'+
+    '<block type="looks_sayforsecs">'+
+      '<value name="MESSAGE">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">Hello!</field>'+
+        '</shadow>'+
+      '</value>'+
+      '<value name="SECS">'+
+        '<shadow type="math_number">'+
+          '<field name="NUM">2</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="looks_say">'+
+      '<value name="MESSAGE">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">Hello!</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="looks_thinkforsecs">'+
+      '<value name="MESSAGE">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">Hmm...</field>'+
+        '</shadow>'+
+      '</value>'+
+      '<value name="SECS">'+
+        '<shadow type="math_number">'+
+          '<field name="NUM">2</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="looks_think">'+
+      '<value name="MESSAGE">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">Hmm...</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
     '<block type="looks_show"></block>'+
     '<block type="looks_hide"></block>'+
     '<block type="looks_switchcostumeto">'+
@@ -154,6 +196,9 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
     '<block type="looks_changeeffectby">'+
+      '<value name="EFFECT">'+
+        '<shadow type="looks_effectmenu"></shadow>'+
+      '</value>'+
       '<value name="CHANGE">'+
         '<shadow type="math_number">'+
           '<field name="NUM">10</field>'+
@@ -161,6 +206,9 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
     '<block type="looks_seteffectto">'+
+      '<value name="EFFECT">'+
+        '<shadow type="looks_effectmenu"></shadow>'+
+      '</value>'+
       '<value name="VALUE">'+
         '<shadow type="math_number">'+
           '<field name="NUM">10</field>'+
@@ -195,7 +243,7 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '<block type="looks_backdropname"></block>'+
     '<block type="looks_size"></block>'+
   '</category>'+
-  '<category name="Sound" colour="#D65CD6" secondaryColour="#BD42BD">'+
+  '<category name="声音" colour="#D65CD6" secondaryColour="#BD42BD">'+
     '<block type="sound_play">'+
       '<value name="SOUND_MENU">'+
         '<shadow type="sound_sounds_menu"></shadow>'+
@@ -241,17 +289,23 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
         '<shadow type="sound_instruments_menu"></shadow>' +
       '</value>' +
     '</block>'+
-    '<block type="sound_changeeffectby">' +
-      '<value name="VALUE">' +
-        '<shadow type="math_number">'+
-          '<field name="NUM">10</field>'+
-        '</shadow>'+
-      '</value>' +
-    '</block>' +
     '<block type="sound_seteffectto">' +
+      '<value name="EFFECT">' +
+        '<shadow type="sound_effects_menu"></shadow>' +
+      '</value>' +
       '<value name="VALUE">' +
         '<shadow type="math_number">'+
           '<field name="NUM">100</field>'+
+        '</shadow>'+
+      '</value>' +
+    '</block>' +
+    '<block type="sound_changeeffectby">' +
+      '<value name="EFFECT">' +
+        '<shadow type="sound_effects_menu"></shadow>' +
+      '</value>' +
+      '<value name="VALUE">' +
+        '<shadow type="math_number">'+
+          '<field name="NUM">10</field>'+
         '</shadow>'+
       '</value>' +
     '</block>' +
@@ -287,7 +341,7 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '</block>'+
     '<block type="sound_tempo"></block>'+
   '</category>'+
-  '<category name="Pen" colour="#00B295" secondaryColour="#0B8E69">'+
+  '<category name="画笔" colour="#00B295" secondaryColour="#0B8E69">'+
     '<block type="pen_clear"></block>'+
     '<block type="pen_stamp"></block>'+
     '<block type="pen_pendown"></block>'+
@@ -341,7 +395,67 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
   '</category>'+
-  '<category name="Events" colour="#FFD500" secondaryColour="#CC9900">'+
+  '<category name="数据" colour="#FF8C1A" secondaryColour="#DB6E00" custom="VARIABLE">'+
+  '</category>'+
+  '<category name="链表" colour="#FF8C1A" secondaryColour="#DB6E00">'+
+    '<block type="data_listcontents"></block>'+
+    '<block type="data_addtolist">'+
+      '<value name="ITEM">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">thing</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="data_deleteoflist">'+
+      '<value name="INDEX">'+
+        '<shadow type="data_listindexall">'+
+          '<field name="INDEX">1</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="data_insertatlist">'+
+      '<value name="INDEX">'+
+        '<shadow type="data_listindexrandom">'+
+          '<field name="INDEX">1</field>'+
+        '</shadow>'+
+      '</value>'+
+      '<value name="ITEM">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">thing</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="data_replaceitemoflist">'+
+      '<value name="INDEX">'+
+        '<shadow type="data_listindexrandom">'+
+          '<field name="INDEX">1</field>'+
+        '</shadow>'+
+      '</value>'+
+      '<value name="ITEM">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">thing</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="data_itemoflist">'+
+      '<value name="INDEX">'+
+        '<shadow type="data_listindexrandom">'+
+          '<field name="INDEX">1</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="data_lengthoflist"></block>'+
+    '<block type="data_listcontainsitem">'+
+      '<value name="ITEM">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">thing</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+    '<block type="data_showlist"></block>'+
+    '<block type="data_hidelist"></block>'+
+  '</category>'+
+  '<category name="事件" colour="#FFD500" secondaryColour="#CC9900">'+
     '<block type="event_whenflagclicked"></block>'+
     '<block type="event_whenkeypressed">'+
     '</block>'+
@@ -368,7 +482,7 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
   '</category>'+
-  '<category name="Control" colour="#FFAB19" secondaryColour="#CF8B17">'+
+  '<category name="控制" colour="#FFAB19" secondaryColour="#CF8B17">'+
     '<block type="control_wait">'+
       '<value name="DURATION">'+
         '<shadow type="math_positive_number">'+
@@ -397,7 +511,7 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '</block>'+
     '<block type="control_delete_this_clone"></block>'+
   '</category>'+
-  '<category name="Sensing" colour="#4CBFE6" secondaryColour="#2E8EB8">'+
+  '<category name="侦测" colour="#4CBFE6" secondaryColour="#2E8EB8">'+
     '<block type="sensing_touchingobject">'+
       '<value name="TOUCHINGOBJECTMENU">'+
         '<shadow type="sensing_touchingobjectmenu"></shadow>'+
@@ -421,6 +535,14 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
         '<shadow type="sensing_distancetomenu"></shadow>'+
       '</value>'+
     '</block>'+
+    '<block type="sensing_askandwait">'+
+      '<value name="QUESTION">'+
+        '<shadow type="text">'+
+          '<field name="TEXT">What\'s your name?</field>'+
+        '</shadow>'+
+      '</value>'+
+    '</block>'+
+  '<block type="sensing_answer"></block>'+
   '<block type="sensing_keypressed">'+
       '<value name="KEY_OPTION">'+
         '<shadow type="sensing_keyoptions"></shadow>'+
@@ -429,6 +551,27 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
   '<block type="sensing_mousedown"></block>'+
   '<block type="sensing_mousex"></block>'+
   '<block type="sensing_mousey"></block>'+
+  '<block type="sensing_loudness"></block>'+
+  '<block type="sensing_videoon">'+
+      '<value name="VIDEOONMENU1">'+
+        '<shadow type="sensing_videoonmenuone"></shadow>'+
+      '</value>'+
+      '<value name="VIDEOONMENU2">'+
+        '<shadow type="sensing_videoonmenutwo"></shadow>'+
+      '</value>'+
+  '</block>'+
+  '<block type="sensing_videotoggle">'+
+      '<value name="VIDEOTOGGLEMENU">'+
+        '<shadow type="sensing_videotogglemenu"></shadow>'+
+      '</value>'+
+  '</block>'+
+  '<block type="sensing_setvideotransparency">'+
+    '<value name="TRANSPARENCY">'+
+      '<shadow type="math_number">'+
+        '<field name="NUM">50</field>'+
+      '</shadow>'+
+    '</value>'+
+  '</block>'+
   '<block type="sensing_timer"></block>'+
   '<block type="sensing_resettimer"></block>'+
   '<block type="sensing_of">'+
@@ -445,8 +588,9 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '</value>'+
   '</block>'+
   '<block type="sensing_dayssince2000"></block>'+
+  '<block type="sensing_username"></block>'+
   '</category>'+
-  '<category name="Operators" colour="#40BF4A" secondaryColour="#389438">'+
+  '<category name="运算符" colour="#40BF4A" secondaryColour="#389438">'+
     '<block type="operator_add">'+
       '<value name="NUM1">'+
         '<shadow type="math_number">'+
@@ -597,6 +741,9 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
     '<block type="operator_mathop">'+
+      '<value name="OPERATOR">'+
+        '<shadow type="operator_mathop_menu"></shadow>'+
+      '</value>'+
       '<value name="NUM">'+
         '<shadow type="math_number">'+
           '<field name="NUM"></field>'+
@@ -604,4 +751,5 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
   '</category>'+
+  '<category name="更多模块" colour="#FF6680" secondaryColour="#FF3355" custom="PROCEDURE"></category>'+
   '</xml>';

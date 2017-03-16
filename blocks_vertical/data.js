@@ -87,7 +87,7 @@ Blockly.Blocks['data_setvariableto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set %1 to %2",
+      "message0": "将 %1 设置为 %2",
       "args0": [
         {
           "type": "input_value",
@@ -115,7 +115,7 @@ Blockly.Blocks['data_changevariableby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "change %1 by %2",
+      "message0": "将 %1 变为 %2",
       "args0": [
         {
           "type": "input_value",
@@ -143,7 +143,7 @@ Blockly.Blocks['data_showvariable'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "show variable %1",
+      "message0": "显示变量 %1",
       "args0": [
         {
           "type": "input_value",
@@ -167,7 +167,7 @@ Blockly.Blocks['data_hidevariable'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "hide variable %1",
+      "message0": "隐藏变量 %1",
       "args0": [
         {
           "type": "input_value",
@@ -227,8 +227,8 @@ Blockly.Blocks['data_listindexall'] = {
           "precision": 1,
           "options": [
             ["1", "1"],
-            ["last", "last"],
-            ["all", "all"]
+            ["最后", "last"],
+            ["全部", "all"]
           ]
         }
       ],
@@ -277,7 +277,7 @@ Blockly.Blocks['data_addtolist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "add %1 to %2",
+      "message0": "将 %1 增加 %2",
       "args0": [
         {
           "type": "input_value",
@@ -305,7 +305,7 @@ Blockly.Blocks['data_deleteoflist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "delete %1 of %2",
+      "message0": "将 %1 减少 %2",
       "args0": [
         {
           "type": "input_value",
@@ -333,19 +333,19 @@ Blockly.Blocks['data_insertatlist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "insert %1 at %2 of %3",
+      "message0": "把 %1 插入 %2 的 %3位置",
       "args0": [
         {
           "type": "input_value",
           "name": "ITEM"
         },
         {
-          "type": "input_value",
-          "name": "INDEX"
-        },
-        {
           "type": "field_variable",
           "name": "LIST"
+        },
+        {
+          "type": "input_value",
+          "name": "INDEX"
         }
       ],
       "previousStatement": null,
@@ -365,15 +365,15 @@ Blockly.Blocks['data_replaceitemoflist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "replace item %1 of %2 with %3",
+      "message0": "把在 %1 的 %2 替换为 %3",
       "args0": [
-        {
-          "type": "input_value",
-          "name": "INDEX"
-        },
         {
           "type": "field_variable",
           "name": "LIST"
+        },
+        {
+          "type": "input_value",
+          "name": "INDEX"
         },
         {
           "type": "input_value",
@@ -397,7 +397,7 @@ Blockly.Blocks['data_itemoflist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "item %1 of %2",
+      "message0": " %1 的 %2 项目",
       "args0": [
         {
           "type": "input_value",
@@ -425,7 +425,7 @@ Blockly.Blocks['data_lengthoflist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "length of %1",
+      "message0": " %1 的长度",
       "args0": [
         {
           "type": "field_variable",
@@ -449,7 +449,7 @@ Blockly.Blocks['data_listcontainsitem'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "%1 contains %2?",
+      "message0": "%1 包含 %2?",
       "args0": [
         {
           "type": "field_variable",
@@ -477,7 +477,7 @@ Blockly.Blocks['data_showlist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "show list %1",
+      "message0": "显示列表 %1",
       "args0": [
         {
           "type": "field_variable",
@@ -501,7 +501,7 @@ Blockly.Blocks['data_hidelist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "hide list %1",
+      "message0": "隐藏列表 %1",
       "args0": [
         {
           "type": "field_variable",

@@ -34,7 +34,7 @@ Blockly.Blocks['looks_sayforsecs'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "say %1 for %2 secs",
+      "message0": "说 %1  %2 秒",
       "args0": [
         {
           "type": "input_value",
@@ -62,7 +62,7 @@ Blockly.Blocks['looks_say'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "say %1",
+      "message0": "说 %1",
       "args0": [
         {
           "type": "input_value",
@@ -86,7 +86,7 @@ Blockly.Blocks['looks_thinkforsecs'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "think %1 for %2 secs",
+      "message0": "思考 %1  %2 秒",
       "args0": [
         {
           "type": "input_value",
@@ -114,7 +114,7 @@ Blockly.Blocks['looks_think'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "think %1",
+      "message0": "思考 %1",
       "args0": [
         {
           "type": "input_value",
@@ -139,7 +139,7 @@ Blockly.Blocks['looks_show'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "show",
+        "message0": "显示",
         "previousStatement": null,
         "nextStatement": null,
         "category": Blockly.Categories.looks,
@@ -158,7 +158,7 @@ Blockly.Blocks['looks_hide'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "hide",
+        "message0": "隐藏",
         "previousStatement": null,
         "nextStatement": null,
         "category": Blockly.Categories.looks,
@@ -169,15 +169,39 @@ Blockly.Blocks['looks_hide'] = {
   }
 };
 
-Blockly.Blocks['looks_effect_menu_options'] = [
-  ['color', 'COLOR'],
-  ['fisheye', 'FISHEYE'],
-  ['whirl', 'WHIRL'],
-  ['pixelate', 'PIXELATE'],
-  ['mosaic', 'MOSAIC'],
-  ['brightness', 'BRIGHTNESS'],
-  ['ghost', 'GHOST']
-];
+Blockly.Blocks['looks_effectmenu'] = {
+  /**
+   * Graphic effects drop-down menu.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit(
+      {
+        "message0": "%1",
+        "args0": [
+          {
+            "type": "field_dropdown",
+            "name": "EFFECT",
+            "options": [
+              ['颜色', 'COLOR'],
+              ['超广角镜头', 'FISHEYE'],
+              ['旋转', 'WHIRL'],
+              ['像素化', 'PIXELATE'],
+              ['马赛克', 'MOSAIC'],
+              ['亮度', 'BRIGHTNESS'],
+              ['虚像', 'GHOST']
+            ]
+          }
+        ],
+        "inputsInline": true,
+        "output": "String",
+        "colour": Blockly.Colours.looks.secondary,
+        "colourSecondary": Blockly.Colours.looks.secondary,
+        "colourTertiary": Blockly.Colours.looks.tertiary,
+        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
+      });
+  }
+};
 
 Blockly.Blocks['looks_changeeffectby'] = {
   /**
@@ -186,12 +210,11 @@ Blockly.Blocks['looks_changeeffectby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "change effect %1 by %2",
+      "message0": "将 %1 特效增加 %2",
       "args0": [
         {
-          "type": "field_dropdown",
-          "name": "EFFECT",
-          "options": Blockly.Blocks['looks_effect_menu_options']
+          "type": "input_value",
+          "name": "EFFECT"
         },
         {
           "type": "input_value",
@@ -216,12 +239,11 @@ Blockly.Blocks['looks_seteffectto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set effect %1 to %2",
+      "message0": "将 %1 特效设定为 %2",
       "args0": [
         {
-          "type": "field_dropdown",
-          "name": "EFFECT",
-          "options": Blockly.Blocks['looks_effect_menu_options']
+          "type": "input_value",
+          "name": "EFFECT"
         },
         {
           "type": "input_value",
@@ -246,7 +268,7 @@ Blockly.Blocks['looks_cleargraphiceffects'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "clear graphic effects",
+      "message0": "清除所有图像效果",
       "previousStatement": null,
       "nextStatement": null,
       "category": Blockly.Categories.looks,
@@ -264,7 +286,7 @@ Blockly.Blocks['looks_changesizeby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "change size by %1",
+      "message0": "将角色的大小增加 %1",
       "args0": [
         {
           "type": "input_value",
@@ -288,7 +310,7 @@ Blockly.Blocks['looks_setsizeto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set size to %1 %",
+      "message0": "将角色的大小设定为 %1 %",
       "args0": [
         {
           "type": "input_value",
@@ -312,7 +334,7 @@ Blockly.Blocks['looks_size'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "size",
+      "message0": "大小",
       "category": Blockly.Categories.looks,
       "colour": Blockly.Colours.looks.primary,
       "colourSecondary": Blockly.Colours.looks.secondary,
@@ -338,8 +360,8 @@ Blockly.Blocks['looks_costume'] = {
             "type": "field_dropdown",
             "name": "COSTUME",
             "options": [
-              ['costume1', 'COSTUME1'],
-              ['costume2', 'COSTUME2']
+              ['造型1', 'COSTUME1'],
+              ['造型2', 'COSTUME2']
             ]
           }
         ],
@@ -360,7 +382,7 @@ Blockly.Blocks['looks_switchcostumeto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "switch costume to %1",
+      "message0": "将造型切换为 %1",
       "args0": [
         {
           "type": "input_value",
@@ -386,7 +408,7 @@ Blockly.Blocks['looks_nextcostume'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "next costume",
+        "message0": "下一个造型",
         "previousStatement": null,
         "nextStatement": null,
         "category": Blockly.Categories.looks,
@@ -404,7 +426,7 @@ Blockly.Blocks['looks_switchbackdropto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "switch backdrop to %1",
+      "message0": "将背景切换为 %1",
       "args0": [
         {
           "type": "input_value",
@@ -436,7 +458,7 @@ Blockly.Blocks['looks_backdrops'] = {
           "type": "field_dropdown",
           "name": "BACKDROP",
           "options": [
-              ['backdrop1', 'BACKDROP1']
+              ['背景1', 'BACKDROP1']
           ]
         }
       ],
@@ -458,7 +480,7 @@ Blockly.Blocks['looks_gotofront'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "go to front",
+        "message0": "移至最上层",
         "previousStatement": null,
         "nextStatement": null,
         "category": Blockly.Categories.looks,
@@ -476,7 +498,7 @@ Blockly.Blocks['looks_gobacklayers'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "go back %1 layers",
+      "message0": "下移 %1 层",
       "args0": [
         {
           "type": "input_value",
@@ -501,7 +523,7 @@ Blockly.Blocks['looks_backdropname'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "backdrop name",
+      "message0": "背景名称",
       "category": Blockly.Categories.looks,
       "colour": Blockly.Colours.looks.primary,
       "colourSecondary": Blockly.Colours.looks.secondary,
@@ -520,7 +542,7 @@ Blockly.Blocks['looks_costumeorder'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "costume #",
+      "message0": "造型 #",
       "category": Blockly.Categories.looks,
       "colour": Blockly.Colours.looks.primary,
       "colourSecondary": Blockly.Colours.looks.secondary,
@@ -539,7 +561,7 @@ Blockly.Blocks['looks_backdroporder'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "backdrop #",
+      "message0": "背景 #",
       "category": Blockly.Categories.looks,
       "colour": Blockly.Colours.looks.primary,
       "colourSecondary": Blockly.Colours.looks.secondary,
@@ -558,7 +580,7 @@ Blockly.Blocks['looks_switchbackdroptoandwait'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "switch backdrop to %1 and wait",
+      "message0": "将背景切换为 %1 并等待",
       "args0": [
         {
           "type": "input_value",
@@ -584,7 +606,7 @@ Blockly.Blocks['looks_nextbackdrop'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "next backdrop",
+        "message0": "下一个背景",
         "previousStatement": null,
         "nextStatement": null,
         "category": Blockly.Categories.looks,

@@ -34,7 +34,7 @@ Blockly.Blocks['pen_clear'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "clear",
+      "message0": "清空",
       "previousStatement": null,
       "nextStatement": null,
       "category": Blockly.Categories.pen,
@@ -52,7 +52,7 @@ Blockly.Blocks['pen_stamp'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "stamp",
+      "message0": "图章",
       "previousStatement": null,
       "nextStatement": null,
       "category": Blockly.Categories.pen,
@@ -70,7 +70,7 @@ Blockly.Blocks['pen_pendown'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "pen down",
+      "message0": "落笔",
       "previousStatement": null,
       "nextStatement": null,
       "category": Blockly.Categories.pen,
@@ -88,7 +88,7 @@ Blockly.Blocks['pen_penup'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "pen up",
+      "message0": "抬笔",
       "previousStatement": null,
       "nextStatement": null,
       "category": Blockly.Categories.pen,
@@ -106,7 +106,7 @@ Blockly.Blocks['pen_setpencolortocolor'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set pen color to %1",
+      "message0": "将画笔的颜色设定为 %1",
       "args0": [
         {
           "type": "input_value",
@@ -130,7 +130,7 @@ Blockly.Blocks['pen_changepencolorby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "change pen color by %1",
+      "message0": "将画笔颜色增加 %1",
       "args0": [
         {
           "type": "input_value",
@@ -154,7 +154,7 @@ Blockly.Blocks['pen_setpencolortonum'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set pen color to %1",
+      "message0": "将画笔的颜色设定为 %1",
       "args0": [
         {
           "type": "input_value",
@@ -178,7 +178,7 @@ Blockly.Blocks['pen_changepenshadeby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "change pen shade by %1",
+      "message0": "将画笔的色泽增加 %1",
       "args0": [
         {
           "type": "input_value",
@@ -202,7 +202,7 @@ Blockly.Blocks['pen_setpenshadeto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set pen shade to %1",
+      "message0": "将画笔的色度设定为 %1",
       "args0": [
         {
           "type": "input_value",
@@ -226,7 +226,7 @@ Blockly.Blocks['pen_changepensizeby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "change pen size by %1",
+      "message0": "将画笔大小增加 %1",
       "args0": [
         {
           "type": "input_value",
@@ -250,7 +250,7 @@ Blockly.Blocks['pen_setpensizeto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set pen size to %1",
+      "message0": "将画笔的大小设定为 %1",
       "args0": [
         {
           "type": "input_value",
