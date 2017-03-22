@@ -179,7 +179,7 @@ Blockly.Css.CONTENT = [
 
   '.blocklyWidgetDiv {',
     'display: none;',
-    'position: absolute;',
+    'position: fixed;',
     'z-index: 99999;', /* big value for bootstrap3 compatibility */
   '}',
 
