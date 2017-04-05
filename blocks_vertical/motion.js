@@ -426,36 +426,6 @@ Blockly.Blocks['motion_ifonedgebounce'] = {
   }
 };
 
-Blockly.Blocks['motion_setrotationstyle_menu'] = {
-  /**
-   * Rotation style drop-down menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "STYLE",
-            "options": [
-              ['左-右翻转', 'left-right'],
-              ['不翻转', 'don\'t rotate'],
-              ['任意', 'all around']
-            ]
-          }
-        ],
-        "inputsInline": true,
-        "output": "String",
-        "colour": Blockly.Colours.motion.secondary,
-        "colourSecondary": Blockly.Colours.motion.secondary,
-        "colourTertiary": Blockly.Colours.motion.tertiary,
-        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
-      });
-  }
-};
-
 Blockly.Blocks['motion_setrotationstyle'] = {
   /**
    * Block to set rotation style.
@@ -466,8 +436,13 @@ Blockly.Blocks['motion_setrotationstyle'] = {
       "message0": "将旋转模式设定为 %1",
       "args0": [
         {
-          "type": "input_value",
-          "name": "STYLE"
+          "type": "field_dropdown",
+          "name": "STYLE",
+          "options": [
+            ['左-右翻转', 'left-right'],
+            ['不翻转', 'don\'t rotate'],
+            ['任意', 'all around']
+          ]
         }
       ],
       "previousStatement": null,

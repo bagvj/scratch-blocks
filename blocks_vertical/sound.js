@@ -26,7 +26,6 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly.Colours');
 goog.require('Blockly.constants');
 
-
 Blockly.Blocks['sound_sounds_menu'] = {
   /**
    * Sound effects drop-down menu.
@@ -256,38 +255,14 @@ Blockly.Blocks['sound_playnoteforbeats'] = {
   }
 };
 
-Blockly.Blocks['sound_effects_menu'] = {
-  /**
-   * Sound effects drop-down menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "EFFECT",
-            "options": [
-              ['音高', 'PITCH'],
-              ['声道环绕', 'PAN'],
-              ['回音', 'ECHO'],
-              ['混响', 'REVERB'],
-              ['法兹', 'FUZZ'],
-              ['机器人', 'ROBOT']
-            ]
-          }
-        ],
-        "inputsInline": true,
-        "output": "String",
-        "colour": Blockly.Colours.sounds.secondary,
-        "colourSecondary": Blockly.Colours.sounds.secondary,
-        "colourTertiary": Blockly.Colours.sounds.tertiary,
-        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
-      });
-  }
-};
+Blockly.Blocks['sound_effects_menu_options'] = [
+  ['音高', 'PITCH'],
+  ['声道环绕', 'PAN'],
+  ['回音', 'ECHO'],
+  ['混响', 'REVERB'],
+  ['法兹', 'FUZZ'],
+  ['机器人', 'ROBOT']
+];
 
 Blockly.Blocks['sound_seteffectto'] = {
   /**
@@ -299,8 +274,9 @@ Blockly.Blocks['sound_seteffectto'] = {
       "message0": "设定音效 %1 到 %2",
       "args0": [
         {
-          "type": "input_value",
-          "name": "EFFECT"
+          "type": "field_dropdown",
+          "name": "EFFECT",
+          "options": Blockly.Blocks['sound_effects_menu_options']
         },
         {
           "type": "input_value",
@@ -327,8 +303,9 @@ Blockly.Blocks['sound_changeeffectby'] = {
       "message0": "改变音效 %1 为 %2",
       "args0": [
         {
-          "type": "input_value",
-          "name": "EFFECT"
+          "type": "field_dropdown",
+          "name": "EFFECT",
+          "options": Blockly.Blocks['sound_effects_menu_options']
         },
         {
           "type": "input_value",

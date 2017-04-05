@@ -144,9 +144,7 @@ Blockly.Blocks['event_whengreaterthan'] = {
           "type": "field_dropdown",
           "name": "WHENGREATERTHANMENU",
           "options": [
-              ['响度', 'LOUDNESS'],
-              ['计时器', 'TIMER'],
-              ['视频移动', 'VIDEOMOTION']
+              ['计时器', 'TIMER']
           ]
         },
         {

@@ -169,39 +169,15 @@ Blockly.Blocks['looks_hide'] = {
   }
 };
 
-Blockly.Blocks['looks_effectmenu'] = {
-  /**
-   * Graphic effects drop-down menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "EFFECT",
-            "options": [
-              ['颜色', 'COLOR'],
-              ['超广角镜头', 'FISHEYE'],
-              ['旋转', 'WHIRL'],
-              ['像素化', 'PIXELATE'],
-              ['马赛克', 'MOSAIC'],
-              ['亮度', 'BRIGHTNESS'],
-              ['虚像', 'GHOST']
-            ]
-          }
-        ],
-        "inputsInline": true,
-        "output": "String",
-        "colour": Blockly.Colours.looks.secondary,
-        "colourSecondary": Blockly.Colours.looks.secondary,
-        "colourTertiary": Blockly.Colours.looks.tertiary,
-        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
-      });
-  }
-};
+Blockly.Blocks['looks_effect_menu_options'] = [
+  ['颜色', 'COLOR'],
+  ['超广角镜头', 'FISHEYE'],
+  ['旋转', 'WHIRL'],
+  ['像素化', 'PIXELATE'],
+  ['马赛克', 'MOSAIC'],
+  ['亮度', 'BRIGHTNESS'],
+  ['虚像', 'GHOST']
+];
 
 Blockly.Blocks['looks_changeeffectby'] = {
   /**
@@ -213,8 +189,9 @@ Blockly.Blocks['looks_changeeffectby'] = {
       "message0": "将 %1 特效增加 %2",
       "args0": [
         {
-          "type": "input_value",
-          "name": "EFFECT"
+          "type": "field_dropdown",
+          "name": "EFFECT",
+          "options": Blockly.Blocks['looks_effect_menu_options']
         },
         {
           "type": "input_value",
@@ -242,8 +219,9 @@ Blockly.Blocks['looks_seteffectto'] = {
       "message0": "将 %1 特效设定为 %2",
       "args0": [
         {
-          "type": "input_value",
-          "name": "EFFECT"
+          "type": "field_dropdown",
+          "name": "EFFECT",
+          "options": Blockly.Blocks['looks_effect_menu_options']
         },
         {
           "type": "input_value",
