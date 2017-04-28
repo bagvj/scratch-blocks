@@ -340,12 +340,12 @@ Blockly.Blocks['data_insertatlist'] = {
           "name": "ITEM"
         },
         {
-          "type": "field_variable",
-          "name": "LIST"
-        },
-        {
           "type": "input_value",
           "name": "INDEX"
+        },
+        {
+          "type": "field_variable",
+          "name": "LIST"
         }
       ],
       "previousStatement": null,
@@ -368,12 +368,12 @@ Blockly.Blocks['data_replaceitemoflist'] = {
       "message0": "把在 %1 的 %2 替换为 %3",
       "args0": [
         {
-          "type": "field_variable",
-          "name": "LIST"
-        },
-        {
           "type": "input_value",
           "name": "INDEX"
+        },
+        {
+          "type": "field_variable",
+          "name": "LIST"
         },
         {
           "type": "input_value",

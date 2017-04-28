@@ -440,17 +440,26 @@ Blockly.Css.CONTENT = [
     'position: absolute;',
     'z-index: 20;',
   '}',
+
   '.blocklyFlyoutButton {',
-    'fill: #888;',
-    'cursor: default;',
+    'fill: none;',
+  '}',
+
+  '.blocklyFlyoutButtonBackground {',
+      'stroke: #c6c6c6;',
+  '}',
+
+  '.blocklyFlyoutButton .blocklyText {',
+    'fill: $colour_text;',
   '}',
 
   '.blocklyFlyoutButtonShadow {',
-    'fill: #666;',
+    'fill: none;',
   '}',
 
   '.blocklyFlyoutButton:hover {',
-    'fill: #aaa;',
+    'fill: white;',
+    'cursor: pointer;',
   '}',
 
   '.blocklyFlyoutLabel {',
@@ -640,7 +649,7 @@ Blockly.Css.CONTENT = [
     'overflow-y: auto;',
     'position: absolute;',
     'font-family: "Helvetica Neue", Helvetica, sans-serif;',
-    'z-index: 70;', /* so blocks go under toolbox when dragging */
+    'z-index: 40;', /* so blocks go over toolbox when dragging */
   '}',
 
   '.blocklyTreeRoot {',
@@ -1036,11 +1045,20 @@ Blockly.Css.CONTENT = [
   '}',
 
   '.blocklyFlyoutCheckbox {',
-    'fill: red;',
+    'fill: white;',
+    'stroke: #c8c8c8;',
   '}',
 
   '.blocklyFlyoutCheckbox.checked {',
-    'fill: blue;',
+    'fill: ' + Blockly.Colours.motion.primary + ';',
+    'stroke: ' + Blockly.Colours.motion.tertiary + ';',
+  '}',
+
+  '.blocklyFlyoutCheckboxPath {',
+    'stroke: white;',
+    'stroke-width: 3;',
+    'stroke-linecap: round;',
+    'stroke-linejoin: round;',
   '}',
 
   '.scratchCategoryMenu {',
