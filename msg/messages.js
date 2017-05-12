@@ -256,6 +256,33 @@ Blockly.Msg.CONTROLS_IF_ELSE_TITLE_ELSE = Blockly.Msg.CONTROLS_IF_MSG_ELSE;
 /// tooltip - Describes the 'else' subblock during [https://github.com/google/blockly/wiki/IfElse#block-modification if block modification].
 Blockly.Msg.CONTROLS_IF_ELSE_TOOLTIP = '向如果块添加不成立时的条件.';
 
+/// button text - Text on a button inside a dialogue window, which will accept or acknowledge the contents of the dialogue when pressed.
+Blockly.Msg.IOS_OK = '确定';
+/// button text - Text on a button inside a dialogue window, which will close or cancel the dialogue when pressed.
+Blockly.Msg.IOS_CANCEL = '取消';
+/// alert - Title text for an error dialogue.
+Blockly.Msg.IOS_ERROR = '错误';
+/// header text - Title of a section that displays a list of parameters (aka. "inputs") that have been defined for a procedure. This is used inside a dialogue window to configure a procedure.
+Blockly.Msg.IOS_PROCEDURES_INPUTS = '输入';
+/// button text - Text on a button which will add a parameter (aka. "input") to a procedure. This is used inside a dialogue window to configure a procedure. NOTE: The "+" should be preserved at the beginning of the text.
+Blockly.Msg.IOS_PROCEDURES_ADD_INPUT = '+ 添加输入';
+/// option text - Text describing an option to allow statements to be added within a procedure. This is used inside a dialogue window to configure a procedure.
+Blockly.Msg.IOS_PROCEDURES_ALLOW_STATEMENTS = '允许声明语句';
+/// alert - Error message when duplicate parameters (aka. "inputs") have been defined on a procedure. This is used inside a dialogue window to configure procedure parameters.
+Blockly.Msg.IOS_PROCEDURES_DUPLICATE_INPUTS_ERROR = '这个函数有重复的输入.';
+/// button text - Text on a button which will open a variable creation dialogue when pressed. NOTE: The "+" should be preserved at the beginning of the text.
+Blockly.Msg.IOS_VARIABLES_ADD_VARIABLE = '+ 添加变量';
+/// button text - Text on a button inside a variable creation dialogue, which will add a variable when pressed.
+Blockly.Msg.IOS_VARIABLES_ADD_BUTTON = '添加';
+/// button text - Text on a button inside a variable rename dialogue, which will rename a variable when pressed.
+Blockly.Msg.IOS_VARIABLES_RENAME_BUTTON = '重命名';
+/// button text - Text on a button inside a variable deletion dialogue, which will delete a variable when pressed.
+Blockly.Msg.IOS_VARIABLES_DELETE_BUTTON = '删除';
+/// placeholder text - Placeholder text used inside a text input, where a variable name should be entered.
+Blockly.Msg.IOS_VARIABLES_VARIABLE_NAME = '变量名';
+/// alert - Error message that is displayed when the user attempts to create a variable without a name.
+Blockly.Msg.IOS_VARIABLES_EMPTY_NAME_ERROR = '不能使用一个空的变量名.';
+
 /// url - Information about comparisons.
 Blockly.Msg.LOGIC_COMPARE_HELPURL = 'https://en.wikipedia.org/wiki/Inequality_(mathematics)';
 /// tooltip - Describes the equals (=) block.
