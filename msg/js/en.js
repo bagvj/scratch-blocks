@@ -310,6 +310,7 @@ Blockly.Msg.PROCEDURES_MUTATORARG_TITLE = "输入名称:";
 Blockly.Msg.PROCEDURES_MUTATORARG_TOOLTIP = "向函数添加输入.";
 Blockly.Msg.PROCEDURES_MUTATORCONTAINER_TITLE = "输入";
 Blockly.Msg.PROCEDURES_MUTATORCONTAINER_TOOLTIP = "添加,删除或重新排序此函数的输入.";
+Blockly.Msg.PROCEDURE_ALREADY_EXISTS = "名为 '%1' 的程序已存在.";
 Blockly.Msg.REDO = "重做";
 Blockly.Msg.REMOVE_COMMENT = "删除备注";
 Blockly.Msg.RENAME_VARIABLE = "重命名变量...";
