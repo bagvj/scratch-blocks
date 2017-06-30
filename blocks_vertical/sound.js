@@ -54,12 +54,10 @@ Blockly.Blocks['sound_sounds_menu'] = {
             ]
           }
         ],
-        "inputsInline": true,
-        "output": "String",
         "colour": Blockly.Colours.sounds.secondary,
         "colourSecondary": Blockly.Colours.sounds.secondary,
         "colourTertiary": Blockly.Colours.sounds.tertiary,
-        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
+        "extensions": ["output_string"]
       });
   }
 };
@@ -152,12 +150,10 @@ Blockly.Blocks['sound_drums_menu'] = {
             ]
           }
         ],
-        "inputsInline": true,
-        "output": "String",
         "colour": Blockly.Colours.sounds.secondary,
         "colourSecondary": Blockly.Colours.sounds.secondary,
         "colourTertiary": Blockly.Colours.sounds.tertiary,
-        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
+        "extensions": ["output_string"]
       });
   }
 };
@@ -232,11 +228,7 @@ Blockly.Blocks['sound_playnoteforbeats'] = {
 
 Blockly.Blocks['sound_effects_menu_options'] = [
   ['音高', 'PITCH'],
-  ['声道环绕', 'PAN'],
-  ['回音', 'ECHO'],
-  ['混响', 'REVERB'],
-  ['法兹', 'FUZZ'],
-  ['机器人', 'ROBOT']
+  ['声道环绕', 'PAN']
 ];
 
 Blockly.Blocks['sound_seteffectto'] = {
@@ -339,12 +331,10 @@ Blockly.Blocks['sound_instruments_menu'] = {
             ]
           }
         ],
-        "inputsInline": true,
-        "output": "String",
         "colour": Blockly.Colours.sounds.secondary,
         "colourSecondary": Blockly.Colours.sounds.secondary,
         "colourTertiary": Blockly.Colours.sounds.tertiary,
-        "outputShape": Blockly.OUTPUT_SHAPE_ROUND
+        "extensions": ["output_string"]
       });
   }
 };
@@ -418,10 +408,8 @@ Blockly.Blocks['sound_volume'] = {
     this.jsonInit({
       "message0": "音量",
       "category": Blockly.Categories.sound,
-      "extensions": ["colours_sounds"],
-      "output": "Number",
-      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
-      "checkboxInFlyout": true
+      "checkboxInFlyout": true,
+      "extensions": ["colours_sounds", "output_number"]
     });
   }
 };
@@ -475,10 +463,8 @@ Blockly.Blocks['sound_tempo'] = {
     this.jsonInit({
       "message0": "节奏",
       "category": Blockly.Categories.sound,
-      "extensions": ["colours_sounds"],
-      "output": "Number",
-      "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
-      "checkboxInFlyout": true
+      "checkboxInFlyout": true,
+      "extensions": ["colours_sounds", "output_number"]
     });
   }
 };
