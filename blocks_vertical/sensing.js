@@ -514,15 +514,15 @@ Blockly.Blocks['sensing_of_property_menu'] = {
             "type": "field_dropdown",
             "name": "PROPERTY",
             "options": [
-              ['x position', 'x position'],
-              ['y position', 'y position'],
-              ['direction', 'direction'],
-              ['costume #', 'costume #'],
-              ['costume name', 'costume name'],
-              ['size', 'size'],
-              ['volume', 'volume'],
-              ['backdrop #', 'backdrop #'],
-              ['backdrop name', 'backdrop name']
+              ['x位置', 'x position'],
+              ['y位置', 'y position'],
+              ['方向', 'direction'],
+              ['造型 #', 'costume #'],
+              ['造型名', 'costume name'],
+              ['大小', 'size'],
+              ['音量', 'volume'],
+              ['背景 #', 'backdrop #'],
+              ['背景名', 'backdrop name']
             ]
           }
         ],
@@ -546,7 +546,7 @@ Blockly.Blocks['sensing_of_object_menu'] = {
             "name": "OBJECT",
             "options": [
               ['Sprite1', 'Sprite1'],
-              ['Stage', '_stage_']
+              ['舞台', '_stage_']
             ]
           }
         ],
@@ -618,13 +618,13 @@ Blockly.Blocks['sensing_currentmenu'] = {
             "type": "field_dropdown",
             "name": "CURRENTMENU",
             "options": [
-              ['year', 'YEAR'],
-              ['month', 'MONTH'],
-              ['date', 'DATE'],
-              ['day of week', 'DAYOFWEEK'],
-              ['hour', 'HOUR'],
-              ['minute', 'MINUTE'],
-              ['second', 'SECOND']
+              ['年', 'YEAR'],
+              ['月', 'MONTH'],
+              ['日期', 'DATE'],
+              ['一周第几天', 'DAYOFWEEK'],
+              ['小时', 'HOUR'],
+              ['分钟', 'MINUTE'],
+              ['秒', 'SECOND']
             ]
           }
         ],
