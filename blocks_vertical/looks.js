@@ -330,7 +330,7 @@ Blockly.Blocks['looks_nextcostume'] = {
   init: function() {
     this.jsonInit(
       {
-        "nextStatement": null,
+        "message0": "下一个造型",
         "category": Blockly.Categories.looks,
         "extensions": ["colours_looks", "shape_statement"]
       });
@@ -391,7 +391,7 @@ Blockly.Blocks['looks_gotofront'] = {
   init: function() {
     this.jsonInit(
       {
-        "previousStatement": null,
+        "message0": "移到顶层",
         "category": Blockly.Categories.looks,
         "extensions": ["colours_looks", "shape_statement"]
       });
@@ -491,7 +491,7 @@ Blockly.Blocks['looks_nextbackdrop'] = {
   init: function() {
     this.jsonInit(
       {
-        "previousStatement": null,
+        "message0": "下一个背景",
         "category": Blockly.Categories.looks,
         "extensions": ["colours_looks", "shape_statement"]
       });

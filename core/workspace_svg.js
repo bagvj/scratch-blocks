@@ -247,6 +247,14 @@ Blockly.WorkspaceSvg.prototype.isDragSurfaceActive_ = false;
 Blockly.WorkspaceSvg.prototype.lastRecordedPageScroll_ = null;
 
 /**
+ * The first parent div with 'injectionDiv' in the name, or null if not set.
+ * Access this with getInjectionDiv.
+ * @type {!Element}
+ * @private
+ */
+Blockly.WorkspaceSvg.prototype.injectionDiv_ = null;
+
+/**
  * Map from function names to callbacks, for deciding what to do when a button
  * is clicked.
  * @type {!Object<string, function(!Blockly.FlyoutButton)>}
@@ -329,6 +337,29 @@ Blockly.WorkspaceSvg.prototype.getSvgXY = function(element) {
  */
 Blockly.WorkspaceSvg.prototype.getOriginOffsetInPixels = function() {
   return Blockly.utils.getInjectionDivXY_(this.svgBlockCanvas_);
+};
+
+/**
+ * Return the injection div that is a parent of this workspace.
+ * Walks the DOM the first time it's called, then returns a cached value.
+ * @return {!Element} The first parent div with 'injectionDiv' in the name.
+ * @package
+ */
+Blockly.WorkspaceSvg.prototype.getInjectionDiv = function() {
+  // NB: it would be better to pass this in at createDom, but is more likely to
+  // break existing uses of Blockly.
+  if (!this.injectionDiv_) {
+    var element = this.svgGroup_;
+    while (element) {
+      var classes = element.getAttribute('class') || '';
+      if ((' ' + classes + ' ').indexOf(' injectionDiv ') != -1) {
+        this.injectionDiv_ = element;
+        break;
+      }
+      element = element.parentNode;
+    }
+  }
+  return this.injectionDiv_;
 };
 
 /**
