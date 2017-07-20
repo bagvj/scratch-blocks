@@ -352,7 +352,7 @@ Blockly.Blocks['motion_ifonedgebounce'] = {
    */
   init: function() {
     this.jsonInit({
-      "previousStatement": null,
+      "message0": "碰到边缘就反弹",
       "category": Blockly.Categories.motion,
       "extensions": ["colours_motion", "shape_statement"]
     });
