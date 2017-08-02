@@ -1414,7 +1414,7 @@ Blockly.WorkspaceSvg.prototype.showContextMenu_ = function(e) {
         deleteNext();
       } else {
         Blockly.confirm(Blockly.Msg.DELETE_ALL_BLOCKS.
-            replace('%1', deleteList.length),
+            replace('%1', String(deleteCount)),
             function(ok) {
               if (ok) {
                 deleteNext();
@@ -1936,6 +1936,24 @@ Blockly.WorkspaceSvg.prototype.cancelCurrentGesture = function() {
   if (this.currentGesture_) {
     this.currentGesture_.cancel();
   }
+};
+
+/**
+ * Don't even think about using this function before talking to rachel-fenichel.
+ *
+ * Force a drag to start without clicking and dragging the block itself.  Used
+ * to attach duplicated blocks to the mouse pointer.
+ * @param {!Object} fakeEvent An object with the properties needed to start a
+ *     drag, including clientX and clientY.
+ * @param {!Blockly.BlockSvg} block The block to start dragging.
+ * @package
+ */
+Blockly.WorkspaceSvg.prototype.startDragWithFakeEvent = function(fakeEvent,
+    block) {
+  Blockly.Touch.clearTouchIdentifier();
+  Blockly.Touch.checkTouchIdentifier(fakeEvent);
+  var gesture = block.workspace.getGesture(fakeEvent);
+  gesture.forceStartBlockDrag(fakeEvent, block);
 };
 
 /**
