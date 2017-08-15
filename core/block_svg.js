@@ -619,9 +619,15 @@ Blockly.BlockSvg.prototype.tab = function(start, forward) {
   var target = list[forward ? i + 1 : i - 1];
   if (!target) {
     // Ran off of list.
-    var parent = this.getParent();
-    if (parent) {
-      parent.tab(this, forward);
+    // If there is an output, tab up to that block.
+    var outputBlock = this.outputConnection && this.outputConnection.targetBlock();
+    if (outputBlock) {
+      outputBlock.tab(this, forward);
+    } else { // Otherwise, go to next / previous block, depending on value of `forward`
+      var block = forward ? this.getNextBlock() : this.getPreviousBlock();
+      if (block) {
+        block.tab(this, forward);
+      }
     }
   } else if (target instanceof Blockly.Field) {
     target.showEditor_();
@@ -684,6 +690,10 @@ Blockly.BlockSvg.prototype.duplicateAndDragCallback_ = function() {
       // Using domToBlock instead of domToWorkspace means that the new block
       // will be placed at position (0, 0) in main workspace units.
       var newBlock = Blockly.Xml.domToBlock(xml, ws);
+
+      // Scratch-specific: Give shadow dom new IDs to prevent duplicating on paste
+      Blockly.utils.changeObscuredShadowIds(newBlock);
+
       var svgRootNew = newBlock.getSvgRoot();
       if (!svgRootNew) {
         throw new Error('newBlock is not rendered.');

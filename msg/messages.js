@@ -125,8 +125,14 @@ Blockly.Msg.NEW_VARIABLE = '创建变量...';
 Blockly.Msg.NEW_VARIABLE_TITLE = '新变量名:';
 /// alert - Tells the user that the name they entered is already in use.
 Blockly.Msg.VARIABLE_ALREADY_EXISTS = '名为 "%1" 的变量已存在.'
+/// alert - Tells the user that the name they entered is already in use for another type.
+Blockly.Msg.VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE = '名为 "%1" 的变量已经在类型为 "%2" 中存在.';
 /// alert - Tells the user that the name they entered is already in use for a procedure.
 Blockly.Msg.PROCEDURE_ALREADY_EXISTS = '名为 "%1" 的程序已存在.'
+
+// List creation
+/// button text - Text on the button used to launch the list creation dialogue.
+Blockly.Msg.NEW_LIST = '创建列表';
 
 // Variable deletion.
 /// confirm -  Ask the user to confirm their deletion of multiple uses of a variable.
