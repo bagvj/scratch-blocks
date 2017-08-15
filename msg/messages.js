@@ -132,7 +132,7 @@ Blockly.Msg.PROCEDURE_ALREADY_EXISTS = '名为 "%1" 的程序已存在.'
 
 // List creation
 /// button text - Text on the button used to launch the list creation dialogue.
-Blockly.Msg.NEW_LIST = '创建列表';
+Blockly.Msg.NEW_LIST = '创建列表...';
 
 // Variable deletion.
 /// confirm -  Ask the user to confirm their deletion of multiple uses of a variable.

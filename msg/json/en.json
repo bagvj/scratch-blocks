@@ -33,7 +33,7 @@
 	"VARIABLE_ALREADY_EXISTS": "名为 '%1' 的变量已存在.",
 	"VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE": "名为 '%1' 的变量已经在类型为 '%2' 中存在.",
 	"PROCEDURE_ALREADY_EXISTS": "名为 '%1' 的程序已存在.",
-	"NEW_LIST": "创建列表",
+	"NEW_LIST": "创建列表...",
 	"DELETE_VARIABLE_CONFIRMATION": "删除 %1 变量的 '%2' 个使用?",
 	"CANNOT_DELETE_VARIABLE_PROCEDURE": "无法删除变量 '%1' ,因为它是过程 '%2' 定义的一部分.",
 	"DELETE_VARIABLE": "删除 '%1' 变量",
