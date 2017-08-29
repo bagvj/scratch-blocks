@@ -298,7 +298,7 @@ Blockly.Blocks['motion_glideto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "glide %1 secs to %2",
+      "message0": "在 %1 秒内滑行到 %2",
       "args0": [
         {
           "type": "input_value",
