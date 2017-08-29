@@ -1107,8 +1107,8 @@ Blockly.Msg.VARIABLES_SET_TOOLTIP = '将此变量设置为等于输入.';
 Blockly.Msg.VARIABLES_SET_CREATE_GET = '创建 "获取 %1"';
 
 // Procedures Blocks.
-/// url - Information about defining [https://en.wikipedia.org/wiki/Procedure_(computer_science) functions] that do not have return values.
-Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL = 'https://en.wikipedia.org/wiki/Procedure_%28computer_science%29';
+/// url - Information about defining [https://en.wikipedia.org/wiki/Subroutine functions] that do not have return values.
+Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL = 'https://en.wikipedia.org/wiki/Subroutine';
 /// block text - This precedes the name of the function when defining it.  See
 /// [https://blockly-demo.appspot.com/static/apps/code/index.html?lang=en#c84aoc this sample
 /// function definition].
@@ -1135,8 +1135,8 @@ Blockly.Msg.PROCEDURES_DEFNORETURN_DO = '';
 Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP = '创建没有输出的函数.';
 /// Placeholder text that the user is encouraged to replace with a description of what their function does.
 Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT = '描述这个函数...';
-/// url - Information about defining [https://en.wikipedia.org/wiki/Procedure_(computer_science) functions] that have return values.
-Blockly.Msg.PROCEDURES_DEFRETURN_HELPURL = 'https://en.wikipedia.org/wiki/Procedure_%28computer_science%29';
+/// url - Information about defining [https://en.wikipedia.org/wiki/Subroutine functions] that have return values.
+Blockly.Msg.PROCEDURES_DEFRETURN_HELPURL = 'https://en.wikipedia.org/wiki/Subroutine';
 Blockly.Msg.PROCEDURES_DEFRETURN_TITLE = Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE;
 Blockly.Msg.PROCEDURES_DEFRETURN_PROCEDURE = Blockly.Msg.PROCEDURES_DEFNORETURN_PROCEDURE;
 Blockly.Msg.PROCEDURES_DEFRETURN_DO = Blockly.Msg.PROCEDURES_DEFNORETURN_DO;
@@ -1154,13 +1154,13 @@ Blockly.Msg.PROCEDURES_ALLOW_STATEMENTS = '让语句';
 /// alert - The user has created a function with two parameters that have the same name.  Every parameter must have a different name.
 Blockly.Msg.PROCEDURES_DEF_DUPLICATE_WARNING = '警告:此函数具有重复的参数.';
 
-/// url - Information about calling [https://en.wikipedia.org/wiki/Procedure_(computer_science) functions] that do not return values.
-Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL = 'https://en.wikipedia.org/wiki/Procedure_%28computer_science%29';
+/// url - Information about calling [https://en.wikipedia.org/wiki/Subroutine functions] that do not return values.
+Blockly.Msg.PROCEDURES_CALLNORETURN_HELPURL = 'https://en.wikipedia.org/wiki/Subroutine';
 /// tooltip - This block causes the body (blocks inside) of the named function definition to be run.
 Blockly.Msg.PROCEDURES_CALLNORETURN_TOOLTIP = '运行用户定义的函数 "%1".';
 
-/// url - Information about calling [https://en.wikipedia.org/wiki/Procedure_(computer_science) functions] that return values.
-Blockly.Msg.PROCEDURES_CALLRETURN_HELPURL = 'https://en.wikipedia.org/wiki/Procedure_%28computer_science%29';
+/// url - Information about calling [https://en.wikipedia.org/wiki/Subroutine functions] that return values.
+Blockly.Msg.PROCEDURES_CALLRETURN_HELPURL = 'https://en.wikipedia.org/wiki/Subroutine';
 /// tooltip - This block causes the body (blocks inside) of the named function definition to be run.\n\nParameters:\n* %1 - the name of the function.
 Blockly.Msg.PROCEDURES_CALLRETURN_TOOLTIP = '运行用户定义的函数 "%1" 并使用其输出.';
 
