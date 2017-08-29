@@ -228,12 +228,12 @@ Blockly.Blocks['sensing_keyoptions'] = {
           "name": "KEY_OPTION",
           "options": [
               // [localization, language-independent saved value]
-              ['space', 'space'],
-              ['left arrow', 'left arrow'],
-              ['right arrow', 'right arrow'],
-              ['down arrow', 'down arrow'],
-              ['up arrow', 'up arrow'],
-              ['any', 'any'],
+              ['空格', 'space'],
+              ['左箭头', 'left arrow'],
+              ['右箭头', 'right arrow'],
+              ['下箭头', 'down arrow'],
+              ['上箭头', 'up arrow'],
+              ['任意', 'any'],
               ['a', 'a'],
               ['b', 'b'],
               ['c', 'c'],
@@ -299,7 +299,7 @@ Blockly.Blocks['sensing_mousex'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "mouse x",
+      "message0": "鼠标x的坐标",
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_number"]
     });
