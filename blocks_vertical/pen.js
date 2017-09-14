@@ -223,3 +223,43 @@ Blockly.Blocks['pen_setpensizeto'] = {
     });
   }
 };
+
+Blockly.Blocks['pen_changepentransparencyby'] = {
+  /**
+   * Block to change the pen's transparency by the value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "将画笔的透明度增加 %1",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "TRANSPARENCY"
+        }
+      ],
+      "category": Blockly.Categories.pen,
+      "extensions": ["colours_pen", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['pen_setpentransparencyto'] = {
+  /**
+   * Block to set the pen's transparency to the value.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "将画笔的透明度设定为 %1",
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "TRANSPARENCY"
+        }
+      ],
+      "category": Blockly.Categories.pen,
+      "extensions": ["colours_pen", "shape_statement"]
+    });
+  }
+};
