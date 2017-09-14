@@ -404,7 +404,7 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
     '</block>'+
     '<block type="sensing_dayssince2000" id="sensing_dayssince2000"></block>'+
   '</category>'+
-  '<category name="Pen" colour="#00B295" secondaryColour="#0B8E69">'+
+  '<category name="画笔" colour="#00B295" secondaryColour="#0B8E69">'+
     '<block type="pen_clear" id="pen_clear"></block>'+
     '<block type="pen_stamp" id="pen_stamp"></block>'+
     '<block type="pen_pendown" id="pen_pendown"></block>'+
@@ -472,7 +472,7 @@ Blockly.Blocks.defaultToolbox = '<xml id="toolbox-categories" style="display: no
       '</value>'+
     '</block>'+
   '</category>'+
-  '<category name="Operators" colour="#40BF4A" secondaryColour="#389438">'+
+  '<category name="运算符" colour="#40BF4A" secondaryColour="#389438">'+
     '<block type="operator_add" id="operator_add">'+
       '<value name="NUM1">'+
         '<shadow type="math_number">'+
