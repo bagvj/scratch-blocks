@@ -510,8 +510,10 @@ Blockly.Gesture.prototype.cancel = function() {
   // Disposing of a block cancels in-progress drags, but dragging to a delete
   // area disposes of a block and leads to recursive disposal. Break that cycle.
   if (this.isEnding_) {
+    console.log('Trying to cancel a gesture recursively.');
     return;
   }
+  this.isEnding_ = true;
   Blockly.longStop_();
   if (this.isDraggingBlock_) {
     this.blockDragger_.endBlockDrag(this.mostRecentEvent_,
@@ -791,6 +793,8 @@ Blockly.Gesture.prototype.hasStarted = function() {
   return this.hasStarted_;
 };
 
+/* Scratch-specific */
+
 /**
  * Don't even think about using this function before talking to rachel-fenichel.
  *
@@ -807,4 +811,34 @@ Blockly.Gesture.prototype.forceStartBlockDrag = function(fakeEvent, block) {
   this.isDraggingBlock_ = true;
   this.hasExceededDragRadius_ = true;
   this.startDraggingBlock_();
+};
+
+/**
+ * Duplicate the target block and start dragging the duplicated block.
+ * This should be done once we are sure that it is a block drag, and no earlier.
+ * @private
+ */
+Blockly.Gesture.prototype.duplicateOnDrag_ = function() {
+  var newBlock = null;
+  try {
+    // Note: targetBlock_ should have no children.  If it has children we would
+    // need to update shadow block IDs to avoid problems in the VM.
+    var xmlBlock = Blockly.Xml.blockToDom(this.targetBlock_);
+    newBlock = Blockly.Xml.domToBlock(xmlBlock, this.startWorkspace_);
+    // Move the duplicate to original position.
+    var xy = this.targetBlock_.getRelativeToSurfaceXY();
+    newBlock.moveBy(xy.x, xy.y);
+  } finally {
+    Blockly.Events.enable();
+  }
+  if (!newBlock) {
+    // Something went wrong.
+    console.error('Something went wrong while duplicating a block.');
+    return;
+  }
+  if (Blockly.Events.isEnabled()) {
+    Blockly.Events.fire(new Blockly.Events.BlockCreate(newBlock));
+  }
+  newBlock.select();
+  this.targetBlock_ = newBlock;
 };
