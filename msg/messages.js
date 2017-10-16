@@ -109,7 +109,12 @@ Blockly.Msg.HELP = '帮助';
 Blockly.Msg.UNDO = '撤销';
 /// context menu - Undo the previous undo action.\n{{Identical|Redo}}
 Blockly.Msg.REDO = '重做';
+/// context menu - Edit the currently selected procedure.
+Blockly.Msg.EDIT_PROCEDURE = '编辑';
 
+// TODO(#1136): Pick text for this.
+/// context menu - Bring the definition of the procedure into view.
+Blockly.Msg.SHOW_PROCEDURE_DEFINITION = '转到定义';
 // Variable renaming.
 /// prompt - This message is only seen in the Opera browser.  With most browsers, users can edit numeric values in blocks by just clicking and typing.  Opera does not allows this, so we have to open a new window and prompt users with this message to chanage a value.
 Blockly.Msg.CHANGE_VALUE_TITLE = '更改数值:';
