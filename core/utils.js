@@ -33,6 +33,7 @@
 goog.provide('Blockly.utils');
 
 goog.require('Blockly.Touch');
+goog.require('Blockly.Messages');
 goog.require('goog.dom');
 goog.require('goog.events.BrowserFeature');
 goog.require('goog.math.Coordinate');
@@ -968,3 +969,11 @@ Blockly.utils.isShadowArgumentReporter = function(block) {
   return (block.isShadow() && (block.type == 'argument_reporter_boolean' ||
       block.type == 'argument_reporter_string_number'));
 };
+
+Blockly.utils.formatMessage = function(id, defaultMessage) {
+  var defaultLocale = localStorage.defaultLocale || 'zh'
+  var locale = localStorage.locale || defaultLocale
+  var messages = Blockly.Messages[locale]
+  var defaultMessages = Blockly.Messages[defaultLocale]
+  return (messages && messages[id].message) || (defaultMessages && defaultMessages[id].message) || defaultMessages || id
+}
