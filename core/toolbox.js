@@ -124,7 +124,7 @@ Blockly.Toolbox.prototype.init = function() {
           Blockly.hideChaff(true);
         }
         Blockly.Touch.clearTouchIdentifier();  // Don't block future drags.
-      });
+      }, /*opt_noCaptureIdentifier*/ false, /*opt_noPreventDefault*/ true);
 
   this.createFlyout_();
   this.categoryMenu_ = new Blockly.Toolbox.CategoryMenu(this, this.HtmlDiv);

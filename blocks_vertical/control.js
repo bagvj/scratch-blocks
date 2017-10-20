@@ -24,7 +24,6 @@ goog.provide('Blockly.Blocks.control');
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Colours');
-goog.require('Blockly.utils');
 goog.require('Blockly.ScratchBlocks.VerticalExtensions');
 
 
@@ -37,7 +36,7 @@ Blockly.Blocks['control_forever'] = {
   init: function() {
     this.jsonInit({
       "id": "control_forever",
-      "message0": Blockly.utils.formatMessage('control.control_forever', 'forever'),
+      "message0": "forever",
       "message1": "%1", // Statement
       "message2": "%1", // Icon
       "lastDummyAlign2": "RIGHT",
