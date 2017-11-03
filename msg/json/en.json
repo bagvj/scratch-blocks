@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2017-10-16 11:40:55.558136",
+		"lastupdated": "2017-11-03 16:06:22.855864",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -56,6 +56,9 @@
 	"COLOUR_BLEND_COLOUR2": "颜色 2",
 	"COLOUR_BLEND_RATIO": "比率",
 	"COLOUR_BLEND_TOOLTIP": "将两种颜色以给定比例（0.0 - 1.0）混合在一起.",
+	"COLOUR_HUE_LABEL": "颜色",
+	"COLOUR_SATURATION_LABEL": "饱和度",
+	"COLOUR_BRIGHTNESS_LABEL": "明度",
 	"CONTROLS_REPEAT_HELPURL": "https://en.wikipedia.org/wiki/For_loop",
 	"CONTROLS_REPEAT_TITLE": "重复 %1 次",
 	"CONTROLS_REPEAT_INPUT_DO": "执行",
