@@ -183,6 +183,12 @@ Blockly.Msg.COLOUR_BLEND_COLOUR2 = '颜色 2';
 Blockly.Msg.COLOUR_BLEND_RATIO = '比率';
 /// tooltip - See [https://github.com/google/blockly/wiki/Colour#blending-colours https://github.com/google/blockly/wiki/Colour#blending-colours].
 Blockly.Msg.COLOUR_BLEND_TOOLTIP = '将两种颜色以给定比例（0.0 - 1.0）混合在一起.';
+/// dropdown - Label of the "hue" color component slider
+Blockly.Msg.COLOUR_HUE_LABEL = '颜色';
+/// dropdown - Label of the "saturation" color component slider
+Blockly.Msg.COLOUR_SATURATION_LABEL = '饱和度';
+/// dropdown - Label of the "brightness" color component slider
+Blockly.Msg.COLOUR_BRIGHTNESS_LABEL = '明度';
 
 // Loop Blocks.
 /// url - Describes 'repeat loops' in computer programs; consider using the translation of the page [https://en.wikipedia.org/wiki/Control_flow http://en.wikipedia.org/wiki/Control_flow].

@@ -107,7 +107,7 @@ Blockly.Xml.blockToDom = function(block, opt_noId) {
     }
   }
   function fieldToDom(field) {
-    if (field.name && field.EDITABLE) {
+    if (field.name && field.SERIALIZABLE) {
       var container = goog.dom.createDom('field', null, field.getValue());
       container.setAttribute('name', field.name);
       if (field instanceof Blockly.FieldVariable || field instanceof
@@ -302,6 +302,23 @@ Blockly.Xml.textToDom = function(text) {
 };
 
 /**
+ * Clear the given workspace then decode an XML DOM and
+ * create blocks on the workspace.
+ * @param {!Element} xml XML DOM.
+ * @param {!Blockly.Workspace} workspace The workspace.
+ * @return {Array.<string>} An array containing new block ids.
+ */
+Blockly.Xml.clearWorkspaceAndLoadFromXml = function(xml, workspace) {
+  workspace.setResizesEnabled(false);
+  workspace.setToolboxRefreshEnabled(false);
+  workspace.clear();
+  var blockIds = Blockly.Xml.domToWorkspace(xml, workspace);
+  workspace.setResizesEnabled(true);
+  workspace.setToolboxRefreshEnabled(true);
+  return blockIds;
+};
+
+/**
  * Decode an XML DOM and create blocks on the workspace.
  * @param {!Element} xml XML DOM.
  * @param {!Blockly.Workspace} workspace The workspace.
@@ -331,8 +348,8 @@ Blockly.Xml.domToWorkspace = function(xml, workspace) {
   }
 
   // Disable workspace resizes as an optimization.
-  if (workspace.setBulkUpdate) {
-    workspace.setBulkUpdate(true);
+  if (workspace.setResizesEnabled) {
+    workspace.setResizesEnabled(false);
   }
   var variablesFirst = true;
   try {
@@ -376,8 +393,8 @@ Blockly.Xml.domToWorkspace = function(xml, workspace) {
   }
   workspace.updateVariableStore(false);
   // Re-enable workspace resizing.
-  if (workspace.setBulkUpdate) {
-    workspace.setBulkUpdate(false);
+  if (workspace.setResizesEnabled) {
+    workspace.setResizesEnabled(true);
   }
   return newBlockIds;
 };
@@ -728,3 +745,5 @@ goog.global['Blockly']['Xml']['domToText'] = Blockly.Xml.domToText;
 goog.global['Blockly']['Xml']['domToWorkspace'] = Blockly.Xml.domToWorkspace;
 goog.global['Blockly']['Xml']['textToDom'] = Blockly.Xml.textToDom;
 goog.global['Blockly']['Xml']['workspaceToDom'] = Blockly.Xml.workspaceToDom;
+goog.global['Blockly']['Xml']['clearWorkspaceAndLoadFromXml'] =
+  Blockly.Xml.clearWorkspaceAndLoadFromXml;

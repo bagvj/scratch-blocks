@@ -151,12 +151,12 @@ Blockly.WorkspaceSvg.prototype.isMutator = false;
 Blockly.WorkspaceSvg.prototype.resizesEnabled_ = true;
 
 /**
- * Whether this workspace is in the middle of a bulk update.
- * Turn on during batch operations for a performance improvement.
+ * Whether this workspace has toolbox/flyout refreshes enabled.
+ * Disable during batch operations for a performance improvement.
  * @type {boolean}
  * @private
  */
-Blockly.WorkspaceSvg.prototype.isBulkUpdating_ = false;
+Blockly.WorkspaceSvg.prototype.toolboxRefreshEnabled_ = true;
 
 /**
  * Current horizontal scrolling offset in pixel units.
@@ -1012,8 +1012,10 @@ Blockly.WorkspaceSvg.prototype.paste = function(xmlBlock) {
  * @private
  */
 Blockly.WorkspaceSvg.prototype.refreshToolboxSelection_ = function() {
+  // Updating the toolbox can be expensive. Don't do it when when it is
+  // disabled.
   if (this.toolbox_ && this.toolbox_.flyout_ && !this.currentGesture_ &&
-     !this.isBulkUpdating_) {
+      this.toolboxRefreshEnabled_) {
     this.toolbox_.refreshSelection();
   }
 };
@@ -1076,9 +1078,14 @@ Blockly.WorkspaceSvg.prototype.deleteVariableById = function(id) {
  * @package
  */
 Blockly.WorkspaceSvg.prototype.createVariable = function(name, opt_type, opt_id) {
+  var variableInMap = (this.getVariable(name) != null);
   var newVar = Blockly.WorkspaceSvg.superClass_.createVariable.call(this, name,
     opt_type, opt_id);
-  this.refreshToolboxSelection_();
+  // For performance reasons, only refresh the the toolbox for new variables.
+  // Variables that already exist should already be there.
+  if (!variableInMap) {
+    this.refreshToolboxSelection_();
+  }
   return newVar;
 };
 
@@ -1871,34 +1878,29 @@ Blockly.WorkspaceSvg.prototype.setResizesEnabled = function(enabled) {
 };
 
 /**
- * Set whether this workspace is currently doing a bulk update.
- * A bulk update pauses workspace resizing but also pauses other expensive
- * operations, such as refreshing the toolbox as variables are added and
- * removed.
- * @param {boolean} enabled True if a bulk update is starting, false if a bulk
- *     update is ending.
- * @package
+ * Update whether this workspace has toolbox refreshes enabled.
+ * If enabled, the toolbox will refresh when appropriate.
+ * If disabled, workspace will not refresh until re-enabled.
+ * Use to avoid refreshing during a batch operation, for performance.
+ * @param {boolean} enabled Whether refreshes should be enabled.
  */
-Blockly.WorkspaceSvg.prototype.setBulkUpdate = function(enabled) {
-  // This will trigger a resize if necessary.
-  this.setResizesEnabled(!enabled); // Disable resizes when enabling bulk update
-  var stoppedUpdating = (this.isBulkUpdating_ && !enabled);
-  this.isBulkUpdating_ = enabled;
-  if (stoppedUpdating) {
-    // Refresh the toolbox.
-    if (this.toolbox_) {
-      this.toolbox_.refreshSelection();
-    }
+Blockly.WorkspaceSvg.prototype.setToolboxRefreshEnabled = function(enabled) {
+  var reenabled = (!this.toolboxRefreshEnabled_ && enabled);
+  this.toolboxRefreshEnabled_ = enabled;
+  if (reenabled) {
+    // Newly enabled.  Trigger a refresh.
+    this.refreshToolboxSelection_();
   }
 };
+
 
 /**
  * Dispose of all blocks in workspace, with an optimization to prevent resizes.
  */
 Blockly.WorkspaceSvg.prototype.clear = function() {
-  this.setBulkUpdate(true);
+  this.setResizesEnabled(false);
   Blockly.WorkspaceSvg.superClass_.clear.call(this);
-  this.setBulkUpdate(false);
+  this.setResizesEnabled(true);
 };
 
 /**

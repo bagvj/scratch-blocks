@@ -85,9 +85,10 @@ Blockly.Toolbox = function(workspace) {
 
 /**
  * Width of the toolbox, which changes only in vertical layout.
+ * This is the sum of the width of the flyout (250) and the category menu (52).
  * @type {number}
  */
-Blockly.Toolbox.prototype.width = 310;
+Blockly.Toolbox.prototype.width = 302;
 
 /**
  * Height of the toolbox, which changes only in horizontal layout.
@@ -540,7 +541,7 @@ Blockly.Toolbox.Category.prototype.createDom = function() {
   this.item_.appendChild(this.bubble_);
   this.item_.appendChild(this.label_);
   this.parentHtml_.appendChild(this.item_);
-  Blockly.bindEvent_(this.item_, 'mousedown', toolbox,
+  Blockly.bindEvent_(this.item_, 'mouseup', toolbox,
     toolbox.setSelectedItemFactory(this));
 };
 
