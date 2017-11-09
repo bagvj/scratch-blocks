@@ -36,7 +36,7 @@ Blockly.Blocks['control_forever'] = {
   init: function() {
     this.jsonInit({
       "id": "control_forever",
-      "message0": "forever",
+      "message0": "重复执行",
       "message1": "%1", // Statement
       "message2": "%1", // Icon
       "lastDummyAlign2": "RIGHT",
