@@ -136,10 +136,24 @@ Blockly.Msg.VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE = '名为 "%1" 的变量已
 /// alert - Tells the user that the name they entered is already in use for a procedure.
 Blockly.Msg.PROCEDURE_ALREADY_EXISTS = '名为 "%1" 的程序已存在.'
 
+// Custom procedure creation
+/// button text - Text on the button used to launch the procedure creation dialogue.
+Blockly.Msg.NEW_PROCEDURE = '创建一个块...';
+
 // List creation
 /// button text - Text on the button used to launch the list creation dialogue.
 Blockly.Msg.NEW_LIST = '创建列表...';
+/// prompt - Prompts the user to enter the name for a new list
+Blockly.Msg.NEW_LIST_TITLE = '新列表名:';
 
+// Broadcast Message creation
+/// dropdown choice - Create a new message.
+Blockly.Msg.NEW_BROADCAST_MESSAGE = '新消息...';
+/// prompt - Prompts the user to enter the name for a new broadcast message
+Blockly.Msg.NEW_BROADCAST_MESSAGE_TITLE = '新消息名:';
+/// default broadcast message name
+/// (default option in broadcast message dropdown menus)
+Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME = '消息1';
 // Variable deletion.
 /// confirm -  Ask the user to confirm their deletion of multiple uses of a variable.
 Blockly.Msg.DELETE_VARIABLE_CONFIRMATION = '删除 %1 变量的 "%2" 个使用?';

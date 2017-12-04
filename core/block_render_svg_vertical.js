@@ -491,12 +491,6 @@ Blockly.BlockSvg.TOP_RIGHT_CORNER_DEFINE_HAT =
 Blockly.BlockSvg.DEFINE_BLOCK_PADDING_RIGHT = 2 * Blockly.BlockSvg.GRID_UNIT;
 
 /**
- * The type of all define blocks, which have custom rendering.
- * @cost
- */
-Blockly.BlockSvg.DEFINE_BLOCK_TYPE = 'procedures_defnoreturn';
-
-/**
  * Change the colour of a block.
  */
 Blockly.BlockSvg.prototype.updateColour = function() {
@@ -531,8 +525,10 @@ Blockly.BlockSvg.prototype.updateColour = function() {
   this.svgPath_.setAttribute('fill-opacity', this.getOpacity());
 
   // Update colours of input shapes.
-  for (var shape in this.inputShapes_) {
-    this.inputShapes_[shape].setAttribute('fill', this.getColourTertiary());
+  for (var i = 0, input; input = this.inputList[i]; i++) {
+    if (input.outlinePath) {
+      input.outlinePath.setAttribute('fill', this.getColourTertiary());
+    }
   }
 
   // Render icon(s) if applicable
@@ -577,13 +573,16 @@ Blockly.BlockSvg.prototype.highlightShapeForInput = function(conn, add) {
   if (!input) {
     throw 'No input found for the connection';
   }
-  var inputShape = this.inputShapes_[input.name];
+  if (!input.outlinePath) {
+    return;
+  }
   if (add) {
-    inputShape.setAttribute('filter', 'url(#blocklyReplacementGlowFilter)');
+    input.outlinePath.setAttribute('filter',
+        'url(#blocklyReplacementGlowFilter)');
     Blockly.utils.addClass(/** @type {!Element} */ (this.svgGroup_),
         'blocklyReplaceable');
   } else {
-    inputShape.removeAttribute('filter');
+    input.outlinePath.removeAttribute('filter');
     Blockly.utils.removeClass(/** @type {!Element} */ (this.svgGroup_),
         'blocklyReplaceable');
   }
@@ -1154,7 +1153,7 @@ Blockly.BlockSvg.prototype.renderClassify_ = function() {
  */
 Blockly.BlockSvg.prototype.renderDrawTop_ = function(steps, rightEdge) {
   /* eslint-disable indent */
-  if (this.type == Blockly.BlockSvg.DEFINE_BLOCK_TYPE) {
+  if (this.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE) {
     steps.push('m 0, 0');
     steps.push(Blockly.BlockSvg.TOP_LEFT_CORNER_DEFINE_HAT);
   } else {
@@ -1271,7 +1270,7 @@ Blockly.BlockSvg.prototype.renderDrawRight_ = function(steps,
       // Move to the start of the notch.
       cursorX = inputRows.statementEdge + Blockly.BlockSvg.NOTCH_WIDTH;
 
-      if (this.type == Blockly.BlockSvg.DEFINE_BLOCK_TYPE) {
+      if (this.type == Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE) {
         this.renderDefineBlock_(steps, inputRows, input, row);
       } else {
         Blockly.BlockSvg.drawStatementInputFromTopRight_(steps, cursorX,
@@ -1285,7 +1284,7 @@ Blockly.BlockSvg.prototype.renderDrawRight_ = function(steps,
         this.width = Math.max(this.width, inputRows.statementEdge +
           input.connection.targetBlock().getHeightWidth().width);
       }
-      if (this.type != Blockly.BlockSvg.DEFINE_BLOCK_TYPE &&
+      if (this.type != Blockly.PROCEDURES_DEFINITION_BLOCK_TYPE &&
         (y == inputRows.length - 1 ||
           inputRows[y + 1].type == Blockly.NEXT_STATEMENT)) {
         // If the final input is a statement stack, add a small row underneath.
@@ -1314,7 +1313,7 @@ Blockly.BlockSvg.prototype.renderDrawRight_ = function(steps,
  * @param {Number} y Y offset of input.
  */
 Blockly.BlockSvg.prototype.renderInputShape_ = function(input, x, y) {
-  var inputShape = this.inputShapes_[input.name];
+  var inputShape = input.outlinePath;
   if (!inputShape) {
     // No input shape for this input - e.g., the block is an insertion marker.
     return;

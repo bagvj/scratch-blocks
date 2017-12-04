@@ -77,13 +77,10 @@ Blockly.Blocks['event_whenbroadcastreceived'] = {
       "message0": "当接收到 %1",
       "args0": [
         {
-          "type": "field_dropdown",
+          "type": "field_variable",
           "name": "BROADCAST_OPTION",
-          "options": [
-            ['消息1', 'message1'],
-            ['消息2', 'message2'],
-            ['新消息', 'new message']
-          ]
+          "variableTypes": [Blockly.BROADCAST_MESSAGE_VARIABLE_TYPE],
+          "variable": Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME
         }
       ],
       "category": Blockly.Categories.event,
@@ -153,13 +150,10 @@ Blockly.Blocks['event_broadcast_menu'] = {
         "message0": "%1",
         "args0": [
           {
-            "type": "field_dropdown",
+            "type": "field_variable",
             "name": "BROADCAST_OPTION",
-            "options": [
-              ['消息1', 'message1'],
-              ['消息2', 'message2'],
-              ['新消息', 'new message']
-            ]
+            "variableTypes":[Blockly.BROADCAST_MESSAGE_VARIABLE_TYPE],
+            "variable": Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME
           }
         ],
         "colour": Blockly.Colours.event.secondary,
@@ -181,8 +175,10 @@ Blockly.Blocks['event_broadcast'] = {
       "message0": "广播 %1",
       "args0": [
         {
-          "type": "input_value",
-          "name": "BROADCAST_OPTION"
+          "type": "field_variable",
+          "name": "BROADCAST_OPTION",
+          "variableTypes": [Blockly.BROADCAST_MESSAGE_VARIABLE_TYPE],
+          "variable": Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME
         }
       ],
       "category": Blockly.Categories.event,
@@ -201,8 +197,10 @@ Blockly.Blocks['event_broadcastandwait'] = {
       "message0": "广播 %1 并等待",
       "args0": [
         {
-          "type": "input_value",
-          "name": "BROADCAST_OPTION"
+          "type": "field_variable",
+          "name": "BROADCAST_OPTION",
+          "variableTypes": [Blockly.BROADCAST_MESSAGE_VARIABLE_TYPE],
+          "variable": Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME
         }
       ],
       "category": Blockly.Categories.event,

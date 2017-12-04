@@ -66,9 +66,6 @@ Blockly.BlockSvg = function(workspace, prototypeName, opt_id) {
   /** @type {boolean} */
   this.rendered = false;
 
-  /** @type {Object.<string,Element>} */
-  this.inputShapes_ = {};
-
   /**
    * Whether to move the block to the drag surface when it is dragged.
    * True if it should move, false if it should be translated directly.
@@ -146,9 +143,7 @@ Blockly.BlockSvg.prototype.initSvg = function() {
     // Input shapes are empty holes drawn when a value input is not connected.
     for (var i = 0, input; input = this.inputList[i]; i++) {
       input.init();
-      if (input.type === Blockly.INPUT_VALUE) {
-        this.initInputShape(input);
-      }
+      input.initOutlinePath(this.svgGroup_);
     }
     var icons = this.getIcons();
     for (i = 0; i < icons.length; i++) {
@@ -166,27 +161,6 @@ Blockly.BlockSvg.prototype.initSvg = function() {
   if (!this.getSvgRoot().parentNode) {
     this.workspace.getCanvas().appendChild(this.getSvgRoot());
   }
-};
-
-/**
- * Create and initialize the SVG element for an input shape.
- * May be called more than once for an input.
- * @param {!Blockly.Input} input Value input to add a shape SVG element for.
- */
-Blockly.BlockSvg.prototype.initInputShape = function(input) {
-  if (this.inputShapes_[input.name] || input.connection.getShadowDom()) {
-    // Only create the shape elements once, and don't bother creating them if
-    // there's a shadow block that will always cover the input shape.
-    return;
-  }
-  this.inputShapes_[input.name] = Blockly.utils.createSvgElement(
-    'path',
-    {
-      'class': 'blocklyPath',
-      'style': 'visibility: hidden' // Hide by default - shown when not connected.
-    },
-    this.svgGroup_
-  );
 };
 
 /**
@@ -652,7 +626,7 @@ Blockly.BlockSvg.prototype.createTabList_ = function() {
  * @private
  */
 Blockly.BlockSvg.prototype.onMouseDown_ = function(e) {
-  var gesture = this.workspace.getGesture(e);
+  var gesture = this.workspace && this.workspace.getGesture(e);
   if (gesture) {
     gesture.handleBlockStart(e, this);
   }
@@ -696,25 +670,36 @@ Blockly.BlockSvg.prototype.duplicateAndDragCallback_ = function() {
       // will lead to weird jumps.
       // Resizing will be enabled when the drag ends.
       ws.setResizesEnabled(false);
-      // Using domToBlock instead of domToWorkspace means that the new block
-      // will be placed at position (0, 0) in main workspace units.
-      var newBlock = Blockly.Xml.domToBlock(xml, ws);
 
-      // Scratch-specific: Give shadow dom new IDs to prevent duplicating on paste
-      Blockly.utils.changeObscuredShadowIds(newBlock);
+      // Disable events and manually emit events after the block has been
+      // positioned and has had its shadow IDs fixed (Scratch-specific).
+      Blockly.Events.disable();
+      try {
+        // Using domToBlock instead of domToWorkspace means that the new block
+        // will be placed at position (0, 0) in main workspace units.
+        var newBlock = Blockly.Xml.domToBlock(xml, ws);
 
-      var svgRootNew = newBlock.getSvgRoot();
-      if (!svgRootNew) {
-        throw new Error('newBlock is not rendered.');
+        // Scratch-specific: Give shadow dom new IDs to prevent duplicating on paste
+        Blockly.utils.changeObscuredShadowIds(newBlock);
+
+        var svgRootNew = newBlock.getSvgRoot();
+        if (!svgRootNew) {
+          throw new Error('newBlock is not rendered.');
+        }
+
+        // The position of the old block in workspace coordinates.
+        var oldBlockPosWs = oldBlock.getRelativeToSurfaceXY();
+
+        // Place the new block as the same position as the old block.
+        // TODO: Offset by the difference between the mouse position and the upper
+        // left corner of the block.
+        newBlock.moveBy(oldBlockPosWs.x, oldBlockPosWs.y);
+      } finally {
+        Blockly.Events.enable();
       }
-
-      // The position of the old block in workspace coordinates.
-      var oldBlockPosWs = oldBlock.getRelativeToSurfaceXY();
-
-      // Place the new block as the same position as the old block.
-      // TODO: Offset by the difference between the mouse position and the upper
-      // left corner of the block.
-      newBlock.moveBy(oldBlockPosWs.x, oldBlockPosWs.y);
+      if (Blockly.Events.isEnabled()) {
+        Blockly.Events.fire(new Blockly.Events.BlockCreate(newBlock));
+      }
 
       // The position of the old block in pixels relative to the main
       // workspace's origin.
@@ -1394,7 +1379,7 @@ Blockly.BlockSvg.prototype.bumpNeighbours_ = function() {
   if (!this.workspace) {
     return;  // Deleted block.
   }
-  if (Blockly.dragMode_ != Blockly.DRAG_NONE) {
+  if (this.workspace.isDragging()) {
     return;  // Don't bump blocks during a drag.
   }
   var rootBlock = this.getRootBlock();
