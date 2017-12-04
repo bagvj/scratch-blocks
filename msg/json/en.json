@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2017-11-03 16:06:22.855864",
+		"lastupdated": "2017-12-04 17:15:03.962928",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -35,7 +35,12 @@
 	"VARIABLE_ALREADY_EXISTS": "名为 '%1' 的变量已存在.",
 	"VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE": "名为 '%1' 的变量已经在类型为 '%2' 中存在.",
 	"PROCEDURE_ALREADY_EXISTS": "名为 '%1' 的程序已存在.",
+	"NEW_PROCEDURE": "创建一个块...",
 	"NEW_LIST": "创建列表...",
+	"NEW_LIST_TITLE": "新列表名:",
+	"NEW_BROADCAST_MESSAGE": "新消息...",
+	"NEW_BROADCAST_MESSAGE_TITLE": "新消息名:",
+	"DEFAULT_BROADCAST_MESSAGE_NAME": "消息1",
 	"DELETE_VARIABLE_CONFIRMATION": "删除 %1 变量的 '%2' 个使用?",
 	"CANNOT_DELETE_VARIABLE_PROCEDURE": "无法删除变量 '%1' ,因为它是过程 '%2' 定义的一部分.",
 	"DELETE_VARIABLE": "删除 '%1' 变量",
@@ -56,6 +61,9 @@
 	"COLOUR_BLEND_COLOUR2": "颜色 2",
 	"COLOUR_BLEND_RATIO": "比率",
 	"COLOUR_BLEND_TOOLTIP": "将两种颜色以给定比例（0.0 - 1.0）混合在一起.",
+	"COLOUR_HUE_LABEL": "颜色",
+	"COLOUR_SATURATION_LABEL": "饱和度",
+	"COLOUR_BRIGHTNESS_LABEL": "明度",
 	"CONTROLS_REPEAT_HELPURL": "https://en.wikipedia.org/wiki/For_loop",
 	"CONTROLS_REPEAT_TITLE": "重复 %1 次",
 	"CONTROLS_REPEAT_INPUT_DO": "执行",
