@@ -83,7 +83,7 @@ Blockly.Blocks['data_changevariableby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将 %1 变为 %2",
+      "message0": "将 %1 增加 %2",
       "args0": [
         {
           "type": "field_variable",
@@ -234,7 +234,7 @@ Blockly.Blocks['data_addtolist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将 %1 增加 %2",
+      "message0": "将 %1 添加到 %2",
       "args0": [
         {
           "type": "input_value",
@@ -259,7 +259,7 @@ Blockly.Blocks['data_deleteoflist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将 %1 减少 %2",
+      "message0": "去掉 %2 的第 %1 位",
       "args0": [
         {
           "type": "input_value",
@@ -284,7 +284,7 @@ Blockly.Blocks['data_insertatlist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "把 %1 插入 %2 的 %3位置",
+      "message0": "将 %1 插入到 %3 的第 %2 位",
       "args0": [
         {
           "type": "input_value",
@@ -313,7 +313,7 @@ Blockly.Blocks['data_replaceitemoflist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "把在 %1 的 %2 替换为 %3",
+      "message0": "把 %2 的第 %1 位替换为 %3",
       "args0": [
         {
           "type": "input_value",
@@ -342,7 +342,7 @@ Blockly.Blocks['data_itemoflist'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": " %1 的 %2 项目",
+      "message0": " %2 的第 %1 位",
       "args0": [
         {
           "type": "input_value",
