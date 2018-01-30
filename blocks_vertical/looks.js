@@ -391,7 +391,7 @@ Blockly.Blocks['looks_gotofrontback'] = {
   init: function() {
     this.jsonInit(
       {
-        "message0": "移到顶层",
+        "message0": "移到 %1",
         "args0": [
           {
             "type": "field_dropdown",
@@ -415,7 +415,7 @@ Blockly.Blocks['looks_goforwardbackwardlayers'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "下移 %1 层",
+      "message0": "下移 %1 %2 层",
       "args0": [
         {
           "type": "field_dropdown",
@@ -443,7 +443,7 @@ Blockly.Blocks['looks_backdropnumbername'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "背景名称",
+      "message0": "背景名称 %1",
       "args0": [
         {
           "type": "field_dropdown",
@@ -468,7 +468,7 @@ Blockly.Blocks['looks_costumenumbername'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "造型 #",
+      "message0": "造型 %1",
       "args0": [
         {
           "type": "field_dropdown",
