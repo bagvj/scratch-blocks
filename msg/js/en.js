@@ -7,6 +7,7 @@ goog.provide('Blockly.Msg.en');
 goog.require('Blockly.Msg');
 
 Blockly.Msg["ADD_COMMENT"] = "添加备注";
+Blockly.Msg["BROADCAST_MODAL_TITLE"] = "新消息";
 Blockly.Msg["CANNOT_DELETE_VARIABLE_PROCEDURE"] = "无法删除变量 '%1' ,因为它是过程 '%2' 定义的一部分.";
 Blockly.Msg["CHANGE_VALUE_TITLE"] = "更改数值:";
 Blockly.Msg["CLEAN_UP"] = "清理块";
@@ -176,6 +177,8 @@ Blockly.Msg["LISTS_SPLIT_TEXT_FROM_LIST"] = "将清单连接为文本";
 Blockly.Msg["LISTS_SPLIT_TOOLTIP_JOIN"] = "将文本列表添加到一个文本中，用分隔符分隔.";
 Blockly.Msg["LISTS_SPLIT_TOOLTIP_SPLIT"] = "将文本拆分为文本列表，在每个分隔符处分隔.";
 Blockly.Msg["LISTS_SPLIT_WITH_DELIMITER"] = "带分隔符";
+Blockly.Msg["LIST_ALREADY_EXISTS"] = "名为 '%1' 列表已存在.";
+Blockly.Msg["LIST_MODAL_TITLE"] = "新列表";
 Blockly.Msg["LOGIC_BOOLEAN_FALSE"] = "假";
 Blockly.Msg["LOGIC_BOOLEAN_HELPURL"] = "https://github.com/google/blockly/wiki/Logic#values";
 Blockly.Msg["LOGIC_BOOLEAN_TOOLTIP"] = "返回真或假.";
@@ -323,7 +326,10 @@ Blockly.Msg["PROCEDURES_MUTATORCONTAINER_TOOLTIP"] = "添加,删除或重新排�
 Blockly.Msg["PROCEDURE_ALREADY_EXISTS"] = "名为 '%1' 的程序已存在.";
 Blockly.Msg["REDO"] = "重做";
 Blockly.Msg["REMOVE_COMMENT"] = "删除备注";
+Blockly.Msg["RENAME_LIST_MODAL_TITLE"] = "重命名列表";
+Blockly.Msg["RENAME_LIST_TITLE"] = "将所有 '%1' 列表重命为:";
 Blockly.Msg["RENAME_VARIABLE"] = "重命名变量...";
+Blockly.Msg["RENAME_VARIABLE_MODAL_TITLE"] = "变量重命名";
 Blockly.Msg["RENAME_VARIABLE_TITLE"] = "将所有 '%1' 变量重命名为:";
 Blockly.Msg["SHOW_PROCEDURE_DEFINITION"] = "转到定义";
 Blockly.Msg["TEXT_APPEND_APPENDTEXT"] = "附加文本";
@@ -408,6 +414,7 @@ Blockly.Msg["VARIABLES_SET_HELPURL"] = "https://github.com/google/blockly/wiki/V
 Blockly.Msg["VARIABLES_SET_TOOLTIP"] = "将此变量设置为等于输入.";
 Blockly.Msg["VARIABLE_ALREADY_EXISTS"] = "名为 '%1' 的变量已存在.";
 Blockly.Msg["VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE"] = "名为 '%1' 的变量已经在类型为 '%2' 中存在.";
+Blockly.Msg["VARIABLE_MODAL_TITLE"] = "新变量";
 Blockly.Msg.PROCEDURES_DEFRETURN_TITLE = Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE;
 Blockly.Msg.CONTROLS_IF_IF_TITLE_IF = Blockly.Msg.CONTROLS_IF_MSG_IF;
 Blockly.Msg.CONTROLS_WHILEUNTIL_INPUT_DO = Blockly.Msg.CONTROLS_REPEAT_INPUT_DO;

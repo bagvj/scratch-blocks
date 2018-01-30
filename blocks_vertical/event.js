@@ -175,10 +175,8 @@ Blockly.Blocks['event_broadcast'] = {
       "message0": "广播 %1",
       "args0": [
         {
-          "type": "field_variable",
-          "name": "BROADCAST_OPTION",
-          "variableTypes": [Blockly.BROADCAST_MESSAGE_VARIABLE_TYPE],
-          "variable": Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME
+          "type": "input_value",
+          "name": "BROADCAST_INPUT"
         }
       ],
       "category": Blockly.Categories.event,
@@ -197,10 +195,8 @@ Blockly.Blocks['event_broadcastandwait'] = {
       "message0": "广播 %1 并等待",
       "args0": [
         {
-          "type": "field_variable",
-          "name": "BROADCAST_OPTION",
-          "variableTypes": [Blockly.BROADCAST_MESSAGE_VARIABLE_TYPE],
-          "variable": Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME
+          "type":"input_value",
+          "name":"BROADCAST_INPUT"
         }
       ],
       "category": Blockly.Categories.event,

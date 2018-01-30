@@ -201,27 +201,7 @@ Blockly.Blocks['sensing_keypressed'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "按键 %1 是否按下?",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "KEY_OPTION"
-        }
-      ],
-      "category": Blockly.Categories.sensing,
-      "extensions": ["colours_sensing", "output_boolean"]
-    });
-  }
-};
-
-Blockly.Blocks['sensing_keyoptions'] = {
-  /**
-   * Options for Keys
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "%1",
+      "message0": "key %1 pressed?",
       "args0": [
         {
           "type": "field_dropdown",
@@ -273,7 +253,8 @@ Blockly.Blocks['sensing_keyoptions'] = {
           ]
         }
       ],
-      "extensions": ["colours_sensing", "output_string"]
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "output_boolean"]
     });
   }
 };
@@ -316,6 +297,30 @@ Blockly.Blocks['sensing_mousey'] = {
       "message0": "鼠标y的坐标",
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_setdragmode'] = {
+  /**
+   * Block to set drag mode.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": "set drag mode %1",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "DRAG_MODE",
+          "options": [
+            ['draggable', 'draggable'],
+            ['not draggable', 'not draggable']
+          ]
+        }
+      ],
+      "category": Blockly.Categories.sensing,
+      "extensions": ["colours_sensing", "shape_statement"]
     });
   }
 };
@@ -500,37 +505,6 @@ Blockly.Blocks['sensing_resettimer'] = {
   }
 };
 
-Blockly.Blocks['sensing_of_property_menu'] = {
-  /**
-   * "_ of *" properties menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "PROPERTY",
-            "options": [
-              ['x位置', 'x position'],
-              ['y位置', 'y position'],
-              ['方向', 'direction'],
-              ['造型 #', 'costume #'],
-              ['造型名', 'costume name'],
-              ['大小', 'size'],
-              ['音量', 'volume'],
-              ['背景 #', 'backdrop #'],
-              ['背景名', 'backdrop name']
-            ]
-          }
-        ],
-        "extensions": ["colours_sensing", "output_string"]
-      });
-  }
-};
-
 Blockly.Blocks['sensing_of_object_menu'] = {
   /**
    * "* of _" object menu.
@@ -566,8 +540,19 @@ Blockly.Blocks['sensing_of'] = {
       "message0": "%1 of %2",
       "args0": [
         {
-          "type": "input_value",
-          "name": "PROPERTY"
+          "type": "field_dropdown",
+          "name": "PROPERTY",
+          "options": [
+            ['x position', 'x position'],
+            ['y position', 'y position'],
+            ['direction', 'direction'],
+            ['costume #', 'costume #'],
+            ['costume name', 'costume name'],
+            ['size', 'size'],
+            ['volume', 'volume'],
+            ['backdrop #', 'backdrop #'],
+            ['backdrop name', 'backdrop name']
+          ]
         },
         {
           "type": "input_value",
@@ -577,7 +562,6 @@ Blockly.Blocks['sensing_of'] = {
       "output": true,
       "category": Blockly.Categories.sensing,
       "outputShape": Blockly.OUTPUT_SHAPE_ROUND,
-      "checkboxInFlyout": true,
       "extensions": ["colours_sensing"]
     });
   }
@@ -593,43 +577,23 @@ Blockly.Blocks['sensing_current'] = {
       "message0": "目前 %1",
       "args0": [
         {
-          "type": "input_value",
-          "name": "CURRENTMENU"
+          "type": "field_dropdown",
+          "name": "CURRENTMENU",
+          "options": [
+            ['年', 'YEAR'],
+            ['月', 'MONTH'],
+            ['日', 'DATE'],
+            ['一周第几天', 'DAYOFWEEK'],
+            ['时', 'HOUR'],
+            ['分', 'MINUTE'],
+            ['秒', 'SECOND']
+          ]
         }
       ],
       "category": Blockly.Categories.sensing,
       "checkboxInFlyout": true,
       "extensions": ["colours_sensing", "output_number"]
     });
-  }
-};
-
-Blockly.Blocks['sensing_currentmenu'] = {
-  /**
-   * "Current [Options]" Block Menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "CURRENTMENU",
-            "options": [
-              ['年', 'YEAR'],
-              ['月', 'MONTH'],
-              ['日期', 'DATE'],
-              ['一周第几天', 'DAYOFWEEK'],
-              ['小时', 'HOUR'],
-              ['分钟', 'MINUTE'],
-              ['秒', 'SECOND']
-            ]
-          }
-        ],
-        "extensions": ["colours_sensing", "output_string"]
-      });
   }
 };
 

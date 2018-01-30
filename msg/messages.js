@@ -123,12 +123,16 @@ Blockly.Msg.CHANGE_VALUE_TITLE = '更改数值:';
 Blockly.Msg.RENAME_VARIABLE = '重命名变量...';
 /// prompt - Prompts the user to enter the new name for the selected variable.  See [https://github.com/google/blockly/wiki/Variables#dropdown-menu https://github.com/google/blockly/wiki/Variables#dropdown-menu].\n\nParameters:\n* %1 - the name of the variable to be renamed.
 Blockly.Msg.RENAME_VARIABLE_TITLE = '将所有 "%1" 变量重命名为:';
+/// prompt title - Title for the rename variable modal
+Blockly.Msg.RENAME_VARIABLE_MODAL_TITLE = '变量重命名';
 
 // Variable creation
 /// button text - Text on the button used to launch the variable creation dialogue.
 Blockly.Msg.NEW_VARIABLE = '创建变量...';
 /// prompt - Prompts the user to enter the name for a new variable.  See [https://github.com/google/blockly/wiki/Variables#dropdown-menu https://github.com/google/blockly/wiki/Variables#dropdown-menu].
 Blockly.Msg.NEW_VARIABLE_TITLE = '新变量名:';
+/// prompt title - Title of the prompt asking the user to enter the name for the new variable.
+Blockly.Msg.VARIABLE_MODAL_TITLE = '新变量';
 /// alert - Tells the user that the name they entered is already in use.
 Blockly.Msg.VARIABLE_ALREADY_EXISTS = '名为 "%1" 的变量已存在.'
 /// alert - Tells the user that the name they entered is already in use for another type.
@@ -145,15 +149,28 @@ Blockly.Msg.NEW_PROCEDURE = '创建一个块...';
 Blockly.Msg.NEW_LIST = '创建列表...';
 /// prompt - Prompts the user to enter the name for a new list
 Blockly.Msg.NEW_LIST_TITLE = '新列表名:';
+/// prompt title - Title of the prompt asking the user to enter the name for the new list.
+Blockly.Msg.LIST_MODAL_TITLE = '新列表';
+/// alert - Tells the user that the name they entered is already in use.
+Blockly.Msg.LIST_ALREADY_EXISTS = '名为 "%1" 列表已存在.';
+
+// List renaming
+/// prompt - Prompts the user to enter the new name for the selected list.
+Blockly.Msg.RENAME_LIST_TITLE = '将所有 "%1" 列表重命为:';
+/// prompt title - Title of the prompt asking the user to rename the list
+Blockly.Msg.RENAME_LIST_MODAL_TITLE = '重命名列表';
 
 // Broadcast Message creation
 /// dropdown choice - Create a new message.
 Blockly.Msg.NEW_BROADCAST_MESSAGE = '新消息...';
 /// prompt - Prompts the user to enter the name for a new broadcast message
 Blockly.Msg.NEW_BROADCAST_MESSAGE_TITLE = '新消息名:';
+/// prompt title - Title of the prompt asking the user to enter the name for the new message.
+Blockly.Msg.BROADCAST_MODAL_TITLE = '新消息';
 /// default broadcast message name
 /// (default option in broadcast message dropdown menus)
 Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME = '消息1';
+
 // Variable deletion.
 /// confirm -  Ask the user to confirm their deletion of multiple uses of a variable.
 Blockly.Msg.DELETE_VARIABLE_CONFIRMATION = '删除 %1 变量的 "%2" 个使用?';
