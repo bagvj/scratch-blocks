@@ -537,7 +537,7 @@ Blockly.Blocks['sensing_of'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "%1 of %2",
+      "message0": "%2 的 %1",
       "args0": [
         {
           "type": "field_dropdown",

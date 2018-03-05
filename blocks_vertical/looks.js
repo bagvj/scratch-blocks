@@ -398,7 +398,7 @@ Blockly.Blocks['looks_gotofrontback'] = {
             "name": "FRONT_BACK",
             "options": [
               ['前面', 'front'],
-              ['后后', 'back']
+              ['后面', 'back']
             ]
           }
         ],
