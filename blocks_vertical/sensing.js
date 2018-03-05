@@ -201,7 +201,7 @@ Blockly.Blocks['sensing_keypressed'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "key %1 pressed?",
+      "message0": "按键 %1 按下?",
       "args0": [
         {
           "type": "field_dropdown",
@@ -308,14 +308,14 @@ Blockly.Blocks['sensing_setdragmode'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "set drag mode %1",
+      "message0": "设置拖动模式 %1",
       "args0": [
         {
           "type": "field_dropdown",
           "name": "DRAG_MODE",
           "options": [
-            ['draggable', 'draggable'],
-            ['not draggable', 'not draggable']
+            ['draggable', '可拖动'],
+            ['not draggable', '不可拖动']
           ]
         }
       ],
@@ -549,7 +549,7 @@ Blockly.Blocks['sensing_of'] = {
             ['造型 #', 'costume #'],
             ['造型名字', 'costume name'],
             ['尺寸', 'size'],
-            ['体积', 'volume'],
+            ['音量', 'volume'],
             ['背景 #', 'backdrop #'],
             ['背景名字', 'backdrop name']
           ]

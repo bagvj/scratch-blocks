@@ -449,7 +449,7 @@ Blockly.Blocks['looks_backdropnumbername'] = {
           "type": "field_dropdown",
           "name": "NUMBER_NAME",
           "options": [
-            ['数字', 'number'],
+            ['序号', 'number'],
             ['名字', 'name']
           ]
         }
@@ -474,7 +474,7 @@ Blockly.Blocks['looks_costumenumbername'] = {
           "type": "field_dropdown",
           "name": "NUMBER_NAME",
           "options": [
-            ['数字', 'number'],
+            ['序号', 'number'],
             ['名字', 'name']
           ]
         }
