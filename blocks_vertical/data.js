@@ -217,8 +217,8 @@ Blockly.Blocks['data_listindexrandom'] = {
           "precision": 1,
           "options": [
             ["1", "1"],
-            ["last", "last"],
-            ["random", "random"]
+            ["最后", "last"],
+            ["随机", "random"]
           ]
         }
       ],

@@ -397,8 +397,8 @@ Blockly.Blocks['looks_gotofrontback'] = {
             "type": "field_dropdown",
             "name": "FRONT_BACK",
             "options": [
-              ['front', 'front'],
-              ['back', 'back']
+              ['前面', 'front'],
+              ['后后', 'back']
             ]
           }
         ],
@@ -421,8 +421,8 @@ Blockly.Blocks['looks_goforwardbackwardlayers'] = {
           "type": "field_dropdown",
           "name": "FORWARD_BACKWARD",
           "options": [
-            ['forward', 'forward'],
-            ['backward', 'backward']
+            ['前景', 'forward'],
+            ['背景', 'backward']
           ]
         },
         {
@@ -449,8 +449,8 @@ Blockly.Blocks['looks_backdropnumbername'] = {
           "type": "field_dropdown",
           "name": "NUMBER_NAME",
           "options": [
-            ['number', 'number'],
-            ['name', 'name']
+            ['数字', 'number'],
+            ['名字', 'name']
           ]
         }
       ],
@@ -474,8 +474,8 @@ Blockly.Blocks['looks_costumenumbername'] = {
           "type": "field_dropdown",
           "name": "NUMBER_NAME",
           "options": [
-            ['number', 'number'],
-            ['name', 'name']
+            ['数字', 'number'],
+            ['名字', 'name']
           ]
         }
       ],
