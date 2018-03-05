@@ -314,8 +314,8 @@ Blockly.Blocks['sensing_setdragmode'] = {
           "type": "field_dropdown",
           "name": "DRAG_MODE",
           "options": [
-            ['draggable', '可拖动'],
-            ['not draggable', '不可拖动']
+            ['可拖动', 'draggable'],
+            ['不可拖动', 'not draggable']
           ]
         }
       ],
