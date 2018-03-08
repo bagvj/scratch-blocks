@@ -329,7 +329,7 @@ Blockly.Blocks['operator_letter_of'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "第 %1 个字符 %2",
+      "message0": "%2 第 %1 个字符",
       "args0": [
         {
           "type": "input_value",

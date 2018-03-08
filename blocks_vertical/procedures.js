@@ -590,7 +590,7 @@ Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal = function() {
 Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
   Blockly.WidgetDiv.hide(true);
   this.procCode_ = this.procCode_ + ' %b';
-  this.displayNames_.push('boolean');
+  this.displayNames_.push('布尔');
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('todo');
   this.updateDisplay_();
@@ -605,7 +605,7 @@ Blockly.ScratchBlocks.ProcedureUtils.addBooleanExternal = function() {
 Blockly.ScratchBlocks.ProcedureUtils.addStringNumberExternal = function() {
   Blockly.WidgetDiv.hide(true);
   this.procCode_ = this.procCode_ + ' %s';
-  this.displayNames_.push('number or text');
+  this.displayNames_.push('数字或文本');
   this.argumentIds_.push(Blockly.utils.genUid());
   this.argumentDefaults_.push('todo');
   this.updateDisplay_();
