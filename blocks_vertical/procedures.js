@@ -577,7 +577,7 @@ Blockly.ScratchBlocks.ProcedureUtils.focusLastEditor_ = function() {
  */
 Blockly.ScratchBlocks.ProcedureUtils.addLabelExternal = function() {
   Blockly.WidgetDiv.hide(true);
-  this.procCode_ = this.procCode_ + ' label text';
+  this.procCode_ = this.procCode_ + ' 标签';
   this.updateDisplay_();
   this.focusLastEditor_();
 };
