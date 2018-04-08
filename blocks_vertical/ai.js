@@ -69,8 +69,8 @@ Blockly.Blocks['ai_of'] = {
         type: "field_dropdown",
         name: "PROPERTY",
         options: [
-          ["上传图片", "上传图片"],
-          ["拍照", "拍照"]
+          ["上传图片", "upload_imge"],
+          ["拍照", "photograph"]
         ]
       }, { type: "input_value", name: "OBJECT" }],
       output: !0,
@@ -89,15 +89,15 @@ Blockly.Blocks['ai_of_object_menu'] = {
         type: "field_dropdown",
         name: "OBJECT",
         options: [
-          ["文字识别", "文字识别"],
-          ["人脸识别", "人脸识别"],
-          ["菜品识别", "菜品识别"],
-          ["车辆识别", "车辆识别"],
-          ["动物识别", "动物识别"],
-          ["植物识别", "植物识别"],
-          ["logo识别", "logo识别"],
-          ["图像主体", "图像主体"],
-          ["颜色识别", "颜色识别"]
+          ["文字识别", "reco_world"],
+          ["人脸识别", "reco_face"],
+          ["菜品识别", "reco_food"],
+          ["车辆识别", "reco_car"],
+          ["动物识别", "reco_animal"],
+          ["植物识别", "reco_plant"],
+          ["logo识别", "reco_logo"],
+          ["图像主体", "reco_imge"],
+          ["颜色识别", "reco_colour"]
         ]
       }],
       extensions: ["colours_ai", "output_string"]
