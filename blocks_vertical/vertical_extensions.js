@@ -41,6 +41,10 @@ goog.require('Blockly.constants');
  * @return {function} An extension function that sets colours based on the given
  *     category.
  */
+
+ //添加ai的颜色配置
+
+
 Blockly.ScratchBlocks.VerticalExtensions.colourHelper = function(category) {
   var colours = Blockly.Colours[category];
   if (!(colours && colours.primary && colours.secondary && colours.tertiary)) {
@@ -223,7 +227,7 @@ Blockly.ScratchBlocks.VerticalExtensions.SCRATCH_EXTENSION = function() {
 Blockly.ScratchBlocks.VerticalExtensions.registerAll = function() {
   var categoryNames =
       ['control', 'data', 'data_lists', 'sounds', 'motion', 'looks', 'event',
-      'sensing', 'pen', 'operators', 'more'];
+      'sensing', 'ai', 'pen', 'operators', 'more'];
   // Register functions for all category colours.
   for (var i = 0; i < categoryNames.length; i++) {
     name = categoryNames[i];

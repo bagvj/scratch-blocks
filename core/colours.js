@@ -35,6 +35,11 @@ Blockly.Colours = {
     "secondary": "#855CD6",
     "tertiary": "#774DCB"
   },
+  "ai": {
+    "primary": "#FF0000",
+    "secondary": "#FF0000",
+    "tertiary": "#FFFFFF"
+  },
   "sounds": {
     "primary": "#CF63CF",
     "secondary": "#C94FC9",
@@ -96,10 +101,8 @@ Blockly.Colours = {
   "insertionMarkerOpacity": 0.2,
   "dragShadowOpacity": 0.3,
   "stackGlow": "#FFF200",
-  "stackGlowSize": 4,
   "stackGlowOpacity": 1,
   "replacementGlow": "#FFFFFF",
-  "replacementGlowSize": 2,
   "replacementGlowOpacity": 1,
   "colourPickerStroke": "#FFFFFF",
   // CSS colours: support RGBA

@@ -59,22 +59,7 @@ Blockly.Blocks['event_whenthisspriteclicked'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": 当角色被点击时",
-      "category": Blockly.Categories.event,
-      "extensions": ["colours_event", "shape_hat"]
-    });
-  }
-
-};
-
-Blockly.Blocks['event_whenstageclicked'] = {
-  /**
-   * Block for when the stage is clicked.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "当舞台被点击时",
+      "message0": "当角色被点击时",
       "category": Blockly.Categories.event,
       "extensions": ["colours_event", "shape_hat"]
     });
