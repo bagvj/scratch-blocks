@@ -33,32 +33,31 @@ Blockly.Blocks['sound_sounds_menu'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "SOUND_MENU",
-            "options": [
-              ['1', '0'],
-              ['2', '1'],
-              ['3', '2'],
-              ['4', '3'],
-              ['5', '4'],
-              ['6', '5'],
-              ['7', '6'],
-              ['8', '7'],
-              ['9', '8'],
-              ['10', '9']
-            ]
-          }
-        ],
-        "colour": Blockly.Colours.sounds.secondary,
-        "colourSecondary": Blockly.Colours.sounds.secondary,
-        "colourTertiary": Blockly.Colours.sounds.tertiary,
-        "extensions": ["output_string"]
-      });
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "SOUND_MENU",
+          "options": [
+            ['1', '0'],
+            ['2', '1'],
+            ['3', '2'],
+            ['4', '3'],
+            ['5', '4'],
+            ['6', '5'],
+            ['7', '6'],
+            ['8', '7'],
+            ['9', '8'],
+            ['10', '9']
+          ]
+        }
+      ],
+      "colour": Blockly.Colours.sounds.secondary,
+      "colourSecondary": Blockly.Colours.sounds.secondary,
+      "colourTertiary": Blockly.Colours.sounds.tertiary,
+      "extensions": ["output_string"]
+    });
   }
 };
 
@@ -69,7 +68,7 @@ Blockly.Blocks['sound_play'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "播放声音 %1",
+      "message0": Blockly.Msg.SOUND_PLAY,
       "args0": [
         {
           "type": "input_value",
@@ -89,7 +88,7 @@ Blockly.Blocks['sound_playuntildone'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "播放声音 %1 直到播放完毕",
+      "message0": Blockly.Msg.SOUND_PLAYUNTILDONE,
       "args0": [
         {
           "type": "input_value",
@@ -108,128 +107,12 @@ Blockly.Blocks['sound_stopallsounds'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "停止所有声音",
+      "message0": Blockly.Msg.SOUND_STOPALLSOUNDS,
       "category": Blockly.Categories.sound,
       "extensions": ["colours_sounds", "shape_statement"]
     });
   }
 };
-
-Blockly.Blocks['sound_drums_menu'] = {
-  /**
-   * Drums drop-down menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "DRUM",
-            "options": [
-              ['(1) 小军鼓', '1'],
-              ['(2) 低音鼓', '2'],
-              ['(3) 鼓边敲击', '3'],
-              ['(4) 击钹', '4'],
-              ['(5) 开放双面钹', '5'],
-              ['(6) 闭合双面钹', '6'],
-              ['(7) 铃鼓', '7'],
-              ['(8) 拍掌', '8'],
-              ['(9) 古钢琴', '9'],
-              ['(10) 木块', '10'],
-              ['(11) 牛铃', '11'],
-              ['(12) 三角形', '12'],
-              ['(13) 小手鼓', '13'],
-              ['(14) 康佳鼓', '14'],
-              ['(15) 抓筒', '15'],
-              ['(16) 锯琴', '16'],
-              ['(17) 颤击', '17'],
-              ['(18) 库加鼓 开音', '18']
-            ]
-          }
-        ],
-        "colour": Blockly.Colours.sounds.secondary,
-        "colourSecondary": Blockly.Colours.sounds.secondary,
-        "colourTertiary": Blockly.Colours.sounds.tertiary,
-        "extensions": ["output_string"]
-      });
-  }
-};
-
-Blockly.Blocks['sound_playdrumforbeats'] = {
-  /**
-   * Block to play a drum for some number of beats
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "弹奏鼓声 %1 %2 拍",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "DRUM"
-        },
-        {
-          "type": "input_value",
-          "name": "BEATS"
-        }
-      ],
-      "category": Blockly.Categories.sound,
-      "extensions": ["colours_sounds", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['sound_restforbeats'] = {
-  /**
-   * Block to rest for some number of beats
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "停止 %1 拍",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "BEATS"
-        }
-      ],
-      "category": Blockly.Categories.sound,
-      "extensions": ["colours_sounds", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['sound_playnoteforbeats'] = {
-  /**
-   * Block to play a certain note for some number of beats
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "弹奏音符 %1 %2 拍",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "NOTE"
-        },
-        {
-          "type": "input_value",
-          "name": "BEATS"
-        }
-      ],
-      "category": Blockly.Categories.sound,
-      "extensions": ["colours_sounds", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['sound_effects_menu_options'] = [
-  ['音高', 'PITCH'],
-  ['声道环绕', 'PAN']
-];
 
 Blockly.Blocks['sound_seteffectto'] = {
   /**
@@ -238,12 +121,15 @@ Blockly.Blocks['sound_seteffectto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "设定音效 %1 到 %2",
+      "message0": Blockly.Msg.SOUND_SETEFFECTO,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "EFFECT",
-          "options": Blockly.Blocks['sound_effects_menu_options']
+          "options": [
+            [Blockly.Msg.SOUND_EFFECTS_PITCH, 'PITCH'],
+            [Blockly.Msg.SOUND_EFFECTS_PAN, 'PAN']
+          ]
         },
         {
           "type": "input_value",
@@ -263,12 +149,15 @@ Blockly.Blocks['sound_changeeffectby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "改变音效 %1 为 %2",
+      "message0": Blockly.Msg.SOUND_CHANGEEFFECTBY,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "EFFECT",
-          "options": Blockly.Blocks['sound_effects_menu_options']
+          "options": [
+            [Blockly.Msg.SOUND_EFFECTS_PITCH, 'PITCH'],
+            [Blockly.Msg.SOUND_EFFECTS_PAN, 'PAN']
+          ]
         },
         {
           "type": "input_value",
@@ -287,73 +176,7 @@ Blockly.Blocks['sound_cleareffects'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "清除音效",
-      "extensions": ["colours_sounds", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['sound_instruments_menu'] = {
-  /**
-   * Instruments drop-down menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "INSTRUMENT",
-            "options": [
-              ['(1) 钢琴', '1'],
-              ['(2) 电子琴', '2'],
-              ['(3) 风琴', '3'],
-              ['(4) 吉他', '4'],
-              ['(5) 电吉他', '5'],
-              ['(6) 低音', '6'],
-              ['(7) 拨奏乐器', '7'],
-              ['(8) 大提琴', '8'],
-              ['(9) 长号', '9'],
-              ['(10) 单簧管', '10'],
-              ['(11) 萨克斯管', '11'],
-              ['(12) 长笛', '12'],
-              ['(13) 木笛', '13'],
-              ['(14) 低音管', '14'],
-              ['(15) 人声合唱', '15'],
-              ['(16) 抖音琴', '16'],
-              ['(17) 音乐盒', '17'],
-              ['(18) 钢鼓', '18'],
-              ['(19) 立奏木琴', '19'],
-              ['(20) 合成领奏', '20'],
-              ['(21) 合成长音', '21']
-            ]
-          }
-        ],
-        "colour": Blockly.Colours.sounds.secondary,
-        "colourSecondary": Blockly.Colours.sounds.secondary,
-        "colourTertiary": Blockly.Colours.sounds.tertiary,
-        "extensions": ["output_string"]
-      });
-  }
-};
-
-Blockly.Blocks['sound_setinstrumentto'] = {
-  /**
-   * Block to set the sprite's instrument
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "设定乐器为 %1",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "INSTRUMENT"
-        }
-      ],
-      "category": Blockly.Categories.sound,
+      "message0": Blockly.Msg.SOUND_CLEAREFFECTS,
       "extensions": ["colours_sounds", "shape_statement"]
     });
   }
@@ -366,7 +189,7 @@ Blockly.Blocks['sound_changevolumeby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将音量增加 %1",
+      "message0": Blockly.Msg.SOUND_CHANGEVOLUMEBY,
       "args0": [
         {
           "type": "input_value",
@@ -386,7 +209,7 @@ Blockly.Blocks['sound_setvolumeto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将音量设定为 %1%",
+      "message0": Blockly.Msg.SOUND_SETVOLUMETO,
       "args0": [
         {
           "type": "input_value",
@@ -406,62 +229,7 @@ Blockly.Blocks['sound_volume'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "音量",
-      "category": Blockly.Categories.sound,
-      "checkboxInFlyout": true,
-      "extensions": ["colours_sounds", "output_number"]
-    });
-  }
-};
-
-Blockly.Blocks['sound_changetempoby'] = {
-  /**
-   * Block to change the sprite's tempo by a certain value
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "将节奏加快 %1",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "TEMPO"
-        }
-      ],
-      "category": Blockly.Categories.sound,
-      "extensions": ["colours_sounds", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['sound_settempotobpm'] = {
-  /**
-   * Block to set the sprite's volume to a certain bpm
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "将节奏设定为 %1 bpm",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "TEMPO"
-        }
-      ],
-      "category": Blockly.Categories.sound,
-      "extensions": ["colours_sounds", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['sound_tempo'] = {
-  /**
-   * Block to report tempo
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "节奏",
+      "message0": Blockly.Msg.SOUND_VOLUME,
       "category": Blockly.Categories.sound,
       "checkboxInFlyout": true,
       "extensions": ["colours_sounds", "output_number"]

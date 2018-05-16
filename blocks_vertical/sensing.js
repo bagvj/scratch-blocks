@@ -35,7 +35,7 @@ Blockly.Blocks['sensing_touchingobject'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "碰到 %1?",
+      "message0": Blockly.Msg.SENSING_TOUCHINGOBJECT,
       "args0": [
         {
           "type": "input_value",
@@ -54,21 +54,20 @@ Blockly.Blocks['sensing_touchingobjectmenu'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "TOUCHINGOBJECTMENU",
-            "options": [
-              ['mouse-pointer', '_mouse_'],
-              ['edge', '_edge_']
-            ]
-          }
-        ],
-        "extensions": ["colours_sensing", "output_string"]
-      });
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "TOUCHINGOBJECTMENU",
+          "options": [
+            [Blockly.Msg.SENSING_TOUCHINGOBJECT_POINTER, '_mouse_'],
+            [Blockly.Msg.SENSING_TOUCHINGOBJECT_EDGE, '_edge_']
+          ]
+        }
+      ],
+      "extensions": ["colours_sensing", "output_string"]
+    });
   }
 };
 
@@ -79,7 +78,7 @@ Blockly.Blocks['sensing_touchingcolor'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "碰到 %1 颜色?",
+      "message0": Blockly.Msg.SENSING_TOUCHINGCOLOR,
       "args0": [
         {
           "type": "input_value",
@@ -99,7 +98,7 @@ Blockly.Blocks['sensing_coloristouchingcolor'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "颜色 %1 碰到 %2?",
+      "message0": Blockly.Msg.SENSING_COLORISTOUCHINGCOLOR,
       "args0": [
         {
           "type": "input_value",
@@ -123,7 +122,7 @@ Blockly.Blocks['sensing_distanceto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "到 %1 的距离",
+      "message0": Blockly.Msg.SENSING_DISTANCETO,
       "args0": [
         {
           "type": "input_value",
@@ -142,20 +141,19 @@ Blockly.Blocks['sensing_distancetomenu'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "DISTANCETOMENU",
-            "options": [
-              ['mouse-pointer', '_mouse_']
-            ]
-          }
-        ],
-        "extensions": ["colours_sensing", "output_string"]
-      });
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "DISTANCETOMENU",
+          "options": [
+            [Blockly.Msg.SENSING_DISTANCETO_POINTER, '_mouse_']
+          ]
+        }
+      ],
+      "extensions": ["colours_sensing", "output_string"]
+    });
   }
 };
 
@@ -166,7 +164,7 @@ Blockly.Blocks['sensing_askandwait'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "询问 %1 并且等待",
+      "message0": Blockly.Msg.SENSING_ASKANDWAIT,
       "args0": [
         {
           "type": "input_value",
@@ -186,7 +184,7 @@ Blockly.Blocks['sensing_answer'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "回答",
+      "message0": Blockly.Msg.SENSING_ANSWER,
       "category": Blockly.Categories.sensing,
       "checkboxInFlyout": true,
       "extensions": ["colours_sensing", "output_number"]
@@ -201,7 +199,7 @@ Blockly.Blocks['sensing_keypressed'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "按键 %1 按下?",
+      "message0": Blockly.Msg.SENSING_KEYPRESSED,
       "args0": [
         {
           "type": "input_value",
@@ -227,13 +225,12 @@ Blockly.Blocks['sensing_keyoptions'] = {
           "type": "field_dropdown",
           "name": "KEY_OPTION",
           "options": [
-            // [localization, language-independent saved value]
-            ['空格', 'space'],
-            ['左箭头', 'left arrow'],
-            ['右箭头', 'right arrow'],
-            ['下箭头', 'down arrow'],
-            ['上箭头', 'up arrow'],
-            ['任意', 'any'],
+            [Blockly.Msg.EVENT_WHENKEYPRESSED_SPACE, 'space'],
+            [Blockly.Msg.EVENT_WHENKEYPRESSED_LEFT, 'left arrow'],
+            [Blockly.Msg.EVENT_WHENKEYPRESSED_RIGHT, 'right arrow'],
+            [Blockly.Msg.EVENT_WHENKEYPRESSED_DOWN, 'down arrow'],
+            [Blockly.Msg.EVENT_WHENKEYPRESSED_UP, 'up arrow'],
+            [Blockly.Msg.EVENT_WHENKEYPRESSED_ANY, 'any'],
             ['a', 'a'],
             ['b', 'b'],
             ['c', 'c'],
@@ -285,7 +282,7 @@ Blockly.Blocks['sensing_mousedown'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "下移鼠标?",
+      "message0": Blockly.Msg.SENSING_MOUSEDOWN,
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_boolean"]
     });
@@ -299,7 +296,7 @@ Blockly.Blocks['sensing_mousex'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "鼠标x的坐标",
+      "message0": Blockly.Msg.SENSING_MOUSEX,
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_number"]
     });
@@ -313,7 +310,7 @@ Blockly.Blocks['sensing_mousey'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "鼠标y的坐标",
+      "message0": Blockly.Msg.SENSING_MOUSEY,
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_number"]
     });
@@ -327,14 +324,14 @@ Blockly.Blocks['sensing_setdragmode'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "设置拖动模式 %1",
+      "message0": Blockly.Msg.SENSING_SETDRAGMODE,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "DRAG_MODE",
           "options": [
-            ['可拖动', 'draggable'],
-            ['不可拖动', 'not draggable']
+            [Blockly.Msg.SENSING_SETDRAGMODE_DRAGGABLE, 'draggable'],
+            [Blockly.Msg.SENSING_SETDRAGMODE_NOTDRAGGABLE, 'not draggable']
           ]
         }
       ],
@@ -351,7 +348,7 @@ Blockly.Blocks['sensing_loudness'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "响度",
+      "message0": Blockly.Msg.SENSING_LOUDNESS,
       "category": Blockly.Categories.sensing,
       "checkboxInFlyout": true,
       "extensions": ["colours_sensing", "output_number"]
@@ -359,138 +356,18 @@ Blockly.Blocks['sensing_loudness'] = {
   }
 };
 
-Blockly.Blocks['sensing_videoon'] = {
+Blockly.Blocks['sensing_loud'] = {
   /**
-   * Block to Report the Video [Motion/Direction] of the Stage or Sprite (Not added Sprite's Option).
+   * Block to report if the loudness is "loud" (greater than 10). This is an
+   * obsolete block that is implemented for compatibility with Scratch 2.0 and
+   * 1.4 projects.
    * @this Blockly.Block
    */
   init: function() {
     this.jsonInit({
-      "message0": "视频侦测 %1 在 %2",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "VIDEOONMENU1"
-        },
-        {
-          "type": "input_value",
-          "name": "VIDEOONMENU2"
-        }
-      ],
+      "message0": Blockly.Msg.SENSING_LOUD,
       "category": Blockly.Categories.sensing,
-      "checkboxInFlyout": true,
-      "extensions": ["colours_sensing", "output_number"]
-    });
-  }
-};
-
-Blockly.Blocks['sensing_videoonmenuone'] = {
-  /**
-   * "Video [Motion/Direction] of [Stage]" First Block Menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "VIDEOONMENU1",
-            "options": [
-              ['motion', 'MOTION'],
-              ['direction', 'DIRECTION']
-            ]
-          }
-        ],
-        "extensions": ["colours_sensing", "output_string"]
-      });
-  }
-};
-Blockly.Blocks['sensing_videoonmenutwo'] = {
-  /**
-   * "Video [Motion/Direction] of [Stage]" Second Block Menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "VIDEOONMENU2",
-            "options": [
-              ['stage', 'STAGE']
-            ]
-          }
-        ],
-        "extensions": ["colours_sensing", "output_string"]
-      });
-  }
-};
-
-Blockly.Blocks['sensing_videotoggle'] = {
-  /**
-   * Block to toggle video
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "将摄像头 %1",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "VIDEOTOGGLEMENU"
-        }
-      ],
-      "category": Blockly.Categories.sensing,
-      "extensions": ["colours_sensing", "shape_statement"]
-    });
-  }
-};
-
-Blockly.Blocks['sensing_videotogglemenu'] = {
-  /**
-   * "Turn Video [On/Off/On-flipped]" Block Menu.
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "VIDEOTOGGLEMENU",
-            "options": [
-              ['on', 'ON'],
-              ['off', 'OFF'],
-              ['on-flipped', 'ONFLIPPED']
-            ]
-          }
-        ],
-        "extensions": ["colours_sensing", "output_string"]
-      });
-  }
-};
-
-Blockly.Blocks['sensing_setvideotransparency'] = {
-  /**
-   * Block to set the video transparency to a certain percent
-   * @this Blockly.Block
-   */
-  init: function() {
-    this.jsonInit({
-      "message0": "将视频透明度设置为 %1%",
-      "args0": [
-        {
-          "type": "input_value",
-          "name": "TRANSPARENCY"
-        }
-      ],
-      "category": Blockly.Categories.sensing,
-      "extensions": ["colours_sensing", "shape_statement"]
+      "extensions": ["colours_sensing", "output_boolean"]
     });
   }
 };
@@ -502,7 +379,7 @@ Blockly.Blocks['sensing_timer'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "计时器",
+      "message0": Blockly.Msg.SENSING_TIMER,
       "category": Blockly.Categories.sensing,
       "checkboxInFlyout": true,
       "extensions": ["colours_sensing", "output_number"]
@@ -517,7 +394,7 @@ Blockly.Blocks['sensing_resettimer'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "计时器清零",
+      "message0": Blockly.Msg.SENSING_RESETTIMER,
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "shape_statement"]
     });
@@ -530,21 +407,20 @@ Blockly.Blocks['sensing_of_object_menu'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "OBJECT",
-            "options": [
-              ['角色1', 'Sprite1'],
-              ['舞台', '_stage_']
-            ]
-          }
-        ],
-        "extensions": ["colours_sensing", "output_string"]
-      });
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "OBJECT",
+          "options": [
+            ['角色1', 'Sprite1'],
+            ['舞台', '_stage_']
+          ]
+        }
+      ],
+      "extensions": ["colours_sensing", "output_string"]
+    });
   }
 };
 
@@ -556,21 +432,21 @@ Blockly.Blocks['sensing_of'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "%2 的 %1",
+      "message0": Blockly.Msg.SENSING_OF,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "PROPERTY",
           "options": [
-            ['x位置', 'x position'],
-            ['y位置', 'y position'],
-            ['方向', 'direction'],
-            ['造型 #', 'costume #'],
-            ['造型名字', 'costume name'],
-            ['尺寸', 'size'],
-            ['音量', 'volume'],
-            ['背景 #', 'backdrop #'],
-            ['背景名字', 'backdrop name']
+            [Blockly.Msg.SENSING_OF_XPOSITION, 'x position'],
+            [Blockly.Msg.SENSING_OF_YPOSITION, 'y position'],
+            [Blockly.Msg.SENSING_OF_DIRECTION, 'direction'],
+            [Blockly.Msg.SENSING_OF_COSTUMENUMBER, 'costume #'],
+            [Blockly.Msg.SENSING_OF_COSTUMENAME, 'costume name'],
+            [Blockly.Msg.SENSING_OF_SIZE, 'size'],
+            [Blockly.Msg.SENSING_OF_VOLUME, 'volume'],
+            [Blockly.Msg.SENSING_OF_BACKDROPNUMBER, 'backdrop #'],
+            [Blockly.Msg.SENSING_OF_BACKDROPNAME, 'backdrop name']
           ]
         },
         {
@@ -593,19 +469,19 @@ Blockly.Blocks['sensing_current'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "目前 %1",
+      "message0": Blockly.Msg.SENSING_CURRENT,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "CURRENTMENU",
           "options": [
-            ['年', 'YEAR'],
-            ['月', 'MONTH'],
-            ['日', 'DATE'],
-            ['一周第几天', 'DAYOFWEEK'],
-            ['时', 'HOUR'],
-            ['分', 'MINUTE'],
-            ['秒', 'SECOND']
+            [Blockly.Msg.SENSING_CURRENT_YEAR, 'YEAR'],
+            [Blockly.Msg.SENSING_CURRENT_MONTH, 'MONTH'],
+            [Blockly.Msg.SENSING_CURRENT_DATE, 'DATE'],
+            [Blockly.Msg.SENSING_CURRENT_DAYOFWEEK, 'DAYOFWEEK'],
+            [Blockly.Msg.SENSING_CURRENT_HOUR, 'HOUR'],
+            [Blockly.Msg.SENSING_CURRENT_MINUTE, 'MINUTE'],
+            [Blockly.Msg.SENSING_CURRENT_SECOND, 'SECOND']
           ]
         }
       ],
@@ -623,7 +499,7 @@ Blockly.Blocks['sensing_dayssince2000'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "自2000年以来的天数",
+      "message0": Blockly.Msg.SENSING_DAYSSINCE2000,
       "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_number"]
     });
@@ -637,9 +513,25 @@ Blockly.Blocks['sensing_username'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "用户名",
+      "message0": Blockly.Msg.SENSING_USERNAME,
       "category": Blockly.Categories.sensing,
       "checkboxInFlyout": true,
+      "extensions": ["colours_sensing", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['sensing_userid'] = {
+  /**
+   * Block to report user's ID. Does not actually do anything. This is an
+   * obsolete block that is implemented for compatibility with Scratch 2.0
+   * projects.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.SENSING_USERID,
+      "category": Blockly.Categories.sensing,
       "extensions": ["colours_sensing", "output_number"]
     });
   }

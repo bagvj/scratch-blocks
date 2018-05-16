@@ -35,7 +35,7 @@ Blockly.Blocks['looks_sayforsecs'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "说 %1  %2 秒",
+      "message0": Blockly.Msg.LOOKS_SAYFORSECS,
       "args0": [
         {
           "type": "input_value",
@@ -59,7 +59,7 @@ Blockly.Blocks['looks_say'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "说 %1",
+      "message0": Blockly.Msg.LOOKS_SAY,
       "args0": [
         {
           "type": "input_value",
@@ -79,7 +79,7 @@ Blockly.Blocks['looks_thinkforsecs'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "思考 %1  %2 秒",
+      "message0": Blockly.Msg.LOOKS_THINKFORSECS,
       "args0": [
         {
           "type": "input_value",
@@ -103,7 +103,7 @@ Blockly.Blocks['looks_think'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "思考 %1",
+      "message0": Blockly.Msg.LOOKS_THINK,
       "args0": [
         {
           "type": "input_value",
@@ -122,12 +122,11 @@ Blockly.Blocks['looks_show'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "显示",
-        "category": Blockly.Categories.looks,
-        "extensions": ["colours_looks", "shape_statement"]
-      });
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_SHOW,
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
   }
 };
 
@@ -137,24 +136,29 @@ Blockly.Blocks['looks_hide'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "隐藏",
-        "category": Blockly.Categories.looks,
-        "extensions": ["colours_looks", "shape_statement"]
-      });
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_HIDE,
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
   }
 };
 
-Blockly.Blocks['looks_effect_menu_options'] = [
-  ['颜色', 'COLOR'],
-  ['超广角镜头', 'FISHEYE'],
-  ['旋转', 'WHIRL'],
-  ['像素化', 'PIXELATE'],
-  ['马赛克', 'MOSAIC'],
-  ['亮度', 'BRIGHTNESS'],
-  ['虚像', 'GHOST']
-];
+Blockly.Blocks['looks_hideallsprites'] = {
+  /**
+   * Hide-all-sprites block. Does not actually do anything. This is an
+   * obsolete block that is implemented for compatibility with Scratch 2.0
+   * projects.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_HIDEALLSPRITES,
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
 
 Blockly.Blocks['looks_changeeffectby'] = {
   /**
@@ -163,12 +167,20 @@ Blockly.Blocks['looks_changeeffectby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将 %1 特效增加 %2",
+      "message0": Blockly.Msg.LOOKS_CHANGEEFFECTBY,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "EFFECT",
-          "options": Blockly.Blocks['looks_effect_menu_options']
+          "options": [
+            [Blockly.Msg.LOOKS_EFFECT_COLOR, 'COLOR'],
+            [Blockly.Msg.LOOKS_EFFECT_FISHEYE, 'FISHEYE'],
+            [Blockly.Msg.LOOKS_EFFECT_WHIRL, 'WHIRL'],
+            [Blockly.Msg.LOOKS_EFFECT_PIXELATE, 'PIXELATE'],
+            [Blockly.Msg.LOOKS_EFFECT_MOSAIC, 'MOSAIC'],
+            [Blockly.Msg.LOOKS_EFFECT_BRIGHTNESS, 'BRIGHTNESS'],
+            [Blockly.Msg.LOOKS_EFFECT_GHOST, 'GHOST']
+          ]
         },
         {
           "type": "input_value",
@@ -188,12 +200,20 @@ Blockly.Blocks['looks_seteffectto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将 %1 特效设定为 %2",
+      "message0": Blockly.Msg.LOOKS_SETEFFECTTO,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "EFFECT",
-          "options": Blockly.Blocks['looks_effect_menu_options']
+          "options": [
+            [Blockly.Msg.LOOKS_EFFECT_COLOR, 'COLOR'],
+            [Blockly.Msg.LOOKS_EFFECT_FISHEYE, 'FISHEYE'],
+            [Blockly.Msg.LOOKS_EFFECT_WHIRL, 'WHIRL'],
+            [Blockly.Msg.LOOKS_EFFECT_PIXELATE, 'PIXELATE'],
+            [Blockly.Msg.LOOKS_EFFECT_MOSAIC, 'MOSAIC'],
+            [Blockly.Msg.LOOKS_EFFECT_BRIGHTNESS, 'BRIGHTNESS'],
+            [Blockly.Msg.LOOKS_EFFECT_GHOST, 'GHOST']
+          ]
         },
         {
           "type": "input_value",
@@ -213,7 +233,7 @@ Blockly.Blocks['looks_cleargraphiceffects'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "清除所有图像效果",
+      "message0": Blockly.Msg.LOOKS_CLEARGRAPHICEFFECTS,
       "category": Blockly.Categories.looks,
       "extensions": ["colours_looks", "shape_statement"]
     });
@@ -227,7 +247,7 @@ Blockly.Blocks['looks_changesizeby'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将角色的大小增加 %1",
+      "message0": Blockly.Msg.LOOKS_CHANGESIZEBY,
       "args0": [
         {
           "type": "input_value",
@@ -247,7 +267,7 @@ Blockly.Blocks['looks_setsizeto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将角色的大小设定为 %1 %",
+      "message0": Blockly.Msg.LOOKS_SETSIZETO,
       "args0": [
         {
           "type": "input_value",
@@ -267,10 +287,61 @@ Blockly.Blocks['looks_size'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "大小",
+      "message0": Blockly.Msg.LOOKS_SIZE,
       "category": Blockly.Categories.looks,
       "checkboxInFlyout": true,
       "extensions": ["colours_looks", "output_number"]
+    });
+  }
+};
+
+Blockly.Blocks['looks_changestretchby'] = {
+  /**
+   * Block to change stretch. Does not actually do anything. This is an
+   * obsolete block that is implemented for compatibility with Scratch 1.4
+   * projects as well as 2.0 projects that still have the block.
+   * The "stretch" blocks were introduced in very early versions of Scratch,
+   * but their functionality was removed shortly later. They still appeared
+   * correctly up until (and including) Scratch 1.4 - as "change stretch by"
+   * and "set stretch to" - but were removed altogether in Scratch 2.0, and
+   * displayed as red "undefined" blocks. Some Scratch projects still contain
+   * these blocks, however, and they don't open in 3.0 unless the blocks
+   * actually exist (though they still don't funcitonally do anything).
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_CHANGESTRETCHBY,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "CHANGE"
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
+  }
+};
+
+Blockly.Blocks['looks_setstretchto'] = {
+  /**
+   * Block to set stretch. Does not actually do anything. This is an obsolete
+   * block that is implemented for compatibility with Scratch 1.4 projects
+   * (see looks_changestretchby).
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_SETSTRETCHTO,
+      "args0": [
+        {
+          "type": "input_value",
+          "name": "STRETCH"
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
     });
   }
 };
@@ -281,24 +352,23 @@ Blockly.Blocks['looks_costume'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "%1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "COSTUME",
-            "options": [
-              ['造型1', 'COSTUME1'],
-              ['造型2', 'COSTUME2']
-            ]
-          }
-        ],
-        "colour": Blockly.Colours.looks.secondary,
-        "colourSecondary": Blockly.Colours.looks.secondary,
-        "colourTertiary": Blockly.Colours.looks.tertiary,
-        "extensions": ["output_string"]
-      });
+    this.jsonInit({
+      "message0": "%1",
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "COSTUME",
+          "options": [
+            ['造型1', 'COSTUME1'],
+            ['造型2', 'COSTUME2']
+          ]
+        }
+      ],
+      "colour": Blockly.Colours.looks.secondary,
+      "colourSecondary": Blockly.Colours.looks.secondary,
+      "colourTertiary": Blockly.Colours.looks.tertiary,
+      "extensions": ["output_string"]
+    });
   }
 };
 
@@ -309,7 +379,7 @@ Blockly.Blocks['looks_switchcostumeto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将造型切换为 %1",
+      "message0": Blockly.Msg.LOOKS_SWITCHCOSTUMETO,
       "args0": [
         {
           "type": "input_value",
@@ -328,12 +398,11 @@ Blockly.Blocks['looks_nextcostume'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "下一个造型",
-        "category": Blockly.Categories.looks,
-        "extensions": ["colours_looks", "shape_statement"]
-      });
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_NEXTCOSTUME,
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
   }
 };
 
@@ -344,7 +413,7 @@ Blockly.Blocks['looks_switchbackdropto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将背景切换为 %1",
+      "message0": Blockly.Msg.LOOKS_SWITCHBACKDROPTO,
       "args0": [
         {
           "type": "input_value",
@@ -389,22 +458,21 @@ Blockly.Blocks['looks_gotofrontback'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "移到 %1",
-        "args0": [
-          {
-            "type": "field_dropdown",
-            "name": "FRONT_BACK",
-            "options": [
-              ['前面', 'front'],
-              ['后面', 'back']
-            ]
-          }
-        ],
-        "category": Blockly.Categories.looks,
-        "extensions": ["colours_looks", "shape_statement"]
-      });
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_GOTOFRONTBACK,
+      "args0": [
+        {
+          "type": "field_dropdown",
+          "name": "FRONT_BACK",
+          "options": [
+            [Blockly.Msg.LOOKS_GOTOFRONTBACK_FRONT, 'front'],
+            [Blockly.Msg.LOOKS_GOTOFRONTBACK_BACK, 'back']
+          ]
+        }
+      ],
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
   }
 };
 
@@ -415,14 +483,14 @@ Blockly.Blocks['looks_goforwardbackwardlayers'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "下移 %1 %2 层",
+      "message0": Blockly.Msg.LOOKS_GOFORWARDBACKWARDLAYERS,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "FORWARD_BACKWARD",
           "options": [
-            ['前景', 'forward'],
-            ['背景', 'backward']
+            [Blockly.Msg.LOOKS_GOFORWARDBACKWARDLAYERS_FORWARD, 'forward'],
+            [Blockly.Msg.LOOKS_GOFORWARDBACKWARDLAYERS_BACKWARD, 'backward']
           ]
         },
         {
@@ -443,14 +511,14 @@ Blockly.Blocks['looks_backdropnumbername'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "背景名称 %1",
+      "message0": Blockly.Msg.LOOKS_BACKDROPNUMBERNAME,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "NUMBER_NAME",
           "options": [
-            ['序号', 'number'],
-            ['名字', 'name']
+            [Blockly.Msg.LOOKS_NUMBERNAME_NUMBER, 'number'],
+            [Blockly.Msg.LOOKS_NUMBERNAME_NAME, 'name']
           ]
         }
       ],
@@ -468,14 +536,14 @@ Blockly.Blocks['looks_costumenumbername'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "造型 %1",
+      "message0": Blockly.Msg.LOOKS_COSTUMENUMBERNAME,
       "args0": [
         {
           "type": "field_dropdown",
           "name": "NUMBER_NAME",
           "options": [
-            ['序号', 'number'],
-            ['名字', 'name']
+            [Blockly.Msg.LOOKS_NUMBERNAME_NUMBER, 'number'],
+            [Blockly.Msg.LOOKS_NUMBERNAME_NAME, 'name']
           ]
         }
       ],
@@ -493,7 +561,7 @@ Blockly.Blocks['looks_switchbackdroptoandwait'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "将背景切换为 %1 并等待",
+      "message0": Blockly.Msg.LOOKS_SWITCHBACKDROPTOANDWAIT,
       "args0": [
         {
           "type": "input_value",
@@ -512,11 +580,10 @@ Blockly.Blocks['looks_nextbackdrop'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.jsonInit(
-      {
-        "message0": "下一个背景",
-        "category": Blockly.Categories.looks,
-        "extensions": ["colours_looks", "shape_statement"]
-      });
+    this.jsonInit({
+      "message0": Blockly.Msg.LOOKS_NEXTBACKDROP,
+      "category": Blockly.Categories.looks,
+      "extensions": ["colours_looks", "shape_statement"]
+    });
   }
 };
