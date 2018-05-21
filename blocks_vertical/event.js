@@ -111,7 +111,7 @@ Blockly.Blocks['event_whenbackdropswitchesto'] = {
    */
   init: function() {
     this.jsonInit({
-      "message0": "当背景切换到 %1",
+      "message0": Blockly.Msg.EVENT_WHENBACKDROPSWITCHESTO,
       "args0": [
         {
           "type": "field_dropdown",
