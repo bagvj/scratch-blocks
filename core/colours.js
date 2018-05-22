@@ -35,11 +35,6 @@ Blockly.Colours = {
     "secondary": "#855CD6",
     "tertiary": "#774DCB"
   },
-  "ai": {
-    "primary": "#FF0000",
-    "secondary": "#FF0000",
-    "tertiary": "#FFFFFF"
-  },
   "sounds": {
     "primary": "#CF63CF",
     "secondary": "#C94FC9",
@@ -86,6 +81,11 @@ Blockly.Colours = {
     "primary": "#FF6680",
     "secondary": "#FF4D6A",
     "tertiary": "#FF3355"
+  },
+  "ai": {
+    "primary": "#FF0000",
+    "secondary": "#FF0000",
+    "tertiary": "#FFFFFF"
   },
   "text": "#575E75",
   "workspace": "#F9F9F9",
