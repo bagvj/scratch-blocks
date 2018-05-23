@@ -31,7 +31,7 @@ Blockly.Blocks['ai_speechRecognition'] = {
 			"args0": [
 				{
 					"type": "field_dropdown",
-					"name": "SPEECH",
+					"name": "DELAY",
 					"options": [
 						['2秒', '2000'],
 						['3秒', '3000'],
