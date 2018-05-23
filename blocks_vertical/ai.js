@@ -67,13 +67,13 @@ Blockly.Blocks['ai_picRecognition'] = {
 					"type": "field_dropdown",
 					"name": "TAG",
 					"options": [
-						['菜品', 'menuRecognition'],
-						['人脸', 'faceRecognition'],
-						['主体', 'mainRecognition'],
-						['植物', 'plantRecognition'],
-						['动物', 'animalRecognition'],
-						['文字', 'wordRecognition'],
-						['logo', 'logoRecognition']
+						['菜品', 'menurecognition'],
+						['人脸', 'facerecognition'],
+						['主体', 'mainrecognition'],
+						['植物', 'plantrecognition'],
+						['动物', 'animalrecognition'],
+						['文字', 'wordrecognition'],
+						['logo', 'logorecognition']
 					]
 				}
 			],
