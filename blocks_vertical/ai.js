@@ -61,7 +61,7 @@ Blockly.Blocks['ai_speechResult'] = {
 Blockly.Blocks['ai_picRecognition'] = {
     init: function() {
 		this.jsonInit({
-			"message0": "2秒后识别 %1 图片",
+			"message0": "5秒后识别 %1 图片",
 			"args0": [
 				{
 					"type": "field_dropdown",
